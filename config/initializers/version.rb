@@ -1,7 +1,7 @@
 module TestGuru
-  class << self
-    attr_accessor :version
+  VERSION = '0.1.0'.freeze
+
+  def self.version
+    VERSION
   end
 end
-
-TestGuru.version = '0.1.0'
