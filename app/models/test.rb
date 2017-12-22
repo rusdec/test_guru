@@ -6,7 +6,7 @@ class Test < ApplicationRecord
 
   class << self
     def all_by_category(category_title)
-      select(:title).joins(:category).where('categories.title' => category_title).order(title: :desc).pluck(:title)
+      joins(:category).where(categories: { title: category_title }).order(title: :desc).pluck(:title)
     end
   end
 end
