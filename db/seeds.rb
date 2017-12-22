@@ -80,13 +80,13 @@ Test.create!([
     #id: 6
     title: 'Модели и ассоциации в Ruby on Rails',
     level: 2,
-    category_id: id(Category, { title: 'Биология' })
+    category_id: id(Category, { title: 'Ruby' })
   },
   {
     #id: 7
     title: 'Контроллеры в Ruby on Rails',
     level: 1,
-    category_id: id(Category, { title: 'Биология' })
+    category_id: id(Category, { title: 'Ruby' })
   },
 ]);
 data_was_created(Test)
