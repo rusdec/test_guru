@@ -93,46 +93,46 @@ data_was_created(Category)
 
 Test.create!([
   {
-    #id: 1
     title: 'Основы CSS',
     level: 0,
-    category_id: id(Category, { title: 'Основы веб-разработки' })
+    category_id: id(Category, { title: 'Основы веб-разработки' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 2
     title: 'Основы HTML',
     level: 0,
-    category_id: id(Category, { title: 'Основы веб-разработки' })
+    category_id: id(Category, { title: 'Основы веб-разработки' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 3
     title: 'Флора для самых маленьких',
     level: 0,
-    category_id: id(Category, { title: 'Биология' })
+    category_id: id(Category, { title: 'Биология' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 4
     title: 'Фауна для самых маленьких',
     level: 0,
-    category_id: id(Category, { title: 'Биология' })
+    category_id: id(Category, { title: 'Биология' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 5
     title: 'Фауна Байкала',
     level: 3,
-    category_id: id(Category, { title: 'Биология' })
+    category_id: id(Category, { title: 'Биология' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 6
     title: 'Модели и ассоциации в Ruby on Rails',
     level: 2,
-    category_id: id(Category, { title: 'Ruby' })
+    category_id: id(Category, { title: 'Ruby' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
-    #id: 7
     title: 'Контроллеры в Ruby on Rails',
     level: 1,
-    category_id: id(Category, { title: 'Ruby' })
+    category_id: id(Category, { title: 'Ruby' }),
+    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
 ])
 data_was_created(Test)
@@ -164,91 +164,77 @@ data_was_created(TestPassage)
 Question.create!([
   # Вопросы для "Основы CSS"
   {
-    #id: 1
     body: 'Задайте цвет тексту: <span>Я - Текст</span>',
     level: 1,
     test_id: id(Test, { title: 'Основы CSS' })
   },
   {
-    #id: 2
     body: 'Отцентруйте текст по вертикали: <table><td>Текст1</td><td>Текст<br>2</td></table>',
     level: 2,
     test_id: id(Test, { title: 'Основы CSS' })
   },
   {
-    #id: 3
     body: 'В чём разница между class и id?',
     level: 1,
     test_id: id(Test, { title: 'Основы CSS' })
   },
   # Вопросы для "Основы HTML"
   {
-    #id: 4
     body: 'Создайте POST-форму для ввода пароля и эл.почты.',
     level: 2,
     test_id: id(Test, { title: 'Основы HTML' })
   },
   {
-    #id: 5
     body: 'Что означают теги HTML, HEAD, BODY?',
     level: 1,
     test_id: id(Test, { title: 'Основы HTML' })
   },
   {
-    #id: 6
     body: 'Зачем нужен тег <q>?',
     level: 1,
     test_id: id(Test, { title: 'Основы HTML' })
   },
   # Вопросы для "Флора для самых маленьких"
   {
-    #id: 7
     body: 'Что изучает флора?',
     level: 1,
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
   # Вопросы для "Фауна для самых маленьких"
   {
-    #id: 8
     body: 'Выберите предcтавителя фауны: гвоздика, собака',
     level: 1,
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
   # Вопросы для "Фауна Байкала"
   {
-    #id: 9
     body: 'Кто не является представителем подводного мира оз.Байкал: нерпа, нарвал, осётр',
     level: 1,
     test_id: id(Test, { title: 'Фауна Байкала' })
   },
   {
-    #id: 10
     body: 'Перечислите минимум три вида птиц, живущих территории Байкала',
     level: 1,
     test_id: id(Test, { title: 'Фауна Байкала' })
   },
   # Вопросы для "Модели и ассоциации в Ruby on Rails"
   {
-    #id: 11
     body: 'Опишите разницу между ассоциациями has_many и has_one',
     level: 1,
     test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
   },
   {
-    #id: 12
     body: 'Составьте классы для сущностей: user, book. Отношение между сущностями - многие-ко-многим.',
     level: 2,
     test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
   },
   # Вопросы для "Контроллеры в Ruby on Rails"
   {
-    #id: 13
     body: 'Опишите соглашение об именовании контроллеров',
     level: 1,
     test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
   },
   {
-    #id: 14
     body: 'Зачем нужны strong-параметры?',
     level: 1,
     test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })

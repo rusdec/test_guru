@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :role_users, dependent: :destroy
   has_many :roles, through: :role_users
 
+  has_many :created_tests, class_name: 'Test', foreign_key: :author_id 
+
   def tests_by_level(level)
     self.tests.where(level: level)
   end
