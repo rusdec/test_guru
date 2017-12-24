@@ -6,21 +6,45 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def print_msg(model, msg)
+  puts "-> #{model}: #{msg} (#{model.count})"
+end
 
 def data_was_created(model)
-  puts "Данные созданы: #{model} (#{model.count})"
+  print_msg(model, 'Данные созданы')
 end
 
 def data_was_clear(model)
-  puts "Данные очищены: #{model} (#{model.count})"
+  print_msg(model, 'Данные очищены')
+end
+
+def table_empty(model)
+  print_msg(model, 'Таблица пуста')
 end
 
 def id(model, params)
   model.where(params).pluck(:id).first
 end
 
-models = [User, Category, Test, TestPassage, Question, Answer]
-models.each { |model| data_was_clear(model) if model.destroy_all }
+models = [Role, User, Category, Test, TestPassage, Question, Answer]
+models.each do |model|
+  if model.count > 0
+    data_was_clear(model) if model.destroy_all
+  else
+    table_empty(model)
+  end
+end
+puts
+
+Role.create!([
+{
+  name: 'Администратор',
+},
+{
+  name: 'Пользователь'
+}  
+])
+data_was_created(Role)
 
 User.create!([
 {
@@ -34,15 +58,37 @@ User.create!([
   last_name:  'Ivanova',
   email: 'svetlana.ivanova@mail.org',
   password_digest: 'svetkalove',
+},
+{
+  first_name: 'Aleksandr',
+  last_name: 'Titiov',
+  email: 'aleksandr.titov@mail.org',
+  password_digest: 'admin'
 }
-]);
+])
 data_was_created(User)
+
+RoleUser.create!([
+  {
+    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
+    role_id: id(Role, { name: 'Пользователь' })
+  },
+  {
+    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
+    role_id: id(Role, { name: 'Пользователь' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    role_id: id(Role, { name: 'Администратор' })
+  },
+])
+data_was_created(RoleUser)
 
 Category.create!([
   { title: 'Основы веб-разработки' },
   { title: 'Биология' },
   { title: 'Ruby' }
-]);
+])
 data_was_created(Category)
 
 Test.create!([
@@ -88,7 +134,7 @@ Test.create!([
     level: 1,
     category_id: id(Category, { title: 'Ruby' })
   },
-]);
+])
 data_was_created(Test)
 
 TestPassage.create!([
@@ -113,7 +159,7 @@ TestPassage.create!([
     begin_at: Time.now
   },
 ])
-data_was_created(TestUser)
+data_was_created(TestPassage)
 
 Question.create!([
   # Вопросы для "Основы CSS"
@@ -238,4 +284,4 @@ Answer.create!([
 ])
 data_was_created(Answer)
 
-puts "Тестовые данные созданы"
+puts "\nТестовые данные созданы"
