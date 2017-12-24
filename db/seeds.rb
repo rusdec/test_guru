@@ -19,7 +19,7 @@ def id(model, params)
   model.where(params).pluck(:id).first
 end
 
-models = [User, Category, Test, TestUser, Question, Answer]
+models = [User, Category, Test, TestPassage, Question, Answer]
 models.each { |model| data_was_clear(model) if model.destroy_all }
 
 User.create!([
@@ -91,22 +91,26 @@ Test.create!([
 ]);
 data_was_created(Test)
 
-TestUser.create!([
+TestPassage.create!([
   {
     user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
+    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
+    begin_at: Time.now
   },
   {
     user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
+    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
+    begin_at: Time.now
   },
   {
     user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы CSS' })
+    test_id: id(Test, { title: 'Основы CSS' }),
+    begin_at: Time.now
   },
   {
     user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы HTML' })
+    test_id: id(Test, { title: 'Основы HTML' }),
+    begin_at: Time.now
   },
 ])
 data_was_created(TestUser)
