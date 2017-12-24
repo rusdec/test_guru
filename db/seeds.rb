@@ -96,46 +96,71 @@ Test.create!([
     title: 'Основы CSS',
     level: 0,
     category_id: id(Category, { title: 'Основы веб-разработки' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Основы HTML',
     level: 0,
     category_id: id(Category, { title: 'Основы веб-разработки' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Флора для самых маленьких',
     level: 0,
     category_id: id(Category, { title: 'Биология' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Фауна для самых маленьких',
     level: 0,
     category_id: id(Category, { title: 'Биология' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Фауна Байкала',
     level: 3,
     category_id: id(Category, { title: 'Биология' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Модели и ассоциации в Ruby on Rails',
     level: 2,
     category_id: id(Category, { title: 'Ruby' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
   {
     title: 'Контроллеры в Ruby on Rails',
     level: 1,
     category_id: id(Category, { title: 'Ruby' }),
-    author_id: id(User, { email: 'aleksandr.titov@mail.org' })
   },
 ])
 data_was_created(Test)
+
+TestAuthor.create!([
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Фауна Байкала' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Фауна для самых маленьких' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Флора для самых маленьких' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Основы HTML' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Основы CSS' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
+  },
+  {
+    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
+  },
+])
+data_was_created(TestAuthor)
 
 TestPassage.create!([
   {

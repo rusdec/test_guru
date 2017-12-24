@@ -2,7 +2,9 @@ class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages
 
-  belongs_to :author, class_name: 'User'
+  has_many :test_authors, dependent: :destroy
+  has_many :authors, through: :test_authors, source: :user
+
   has_many :questions
 
   belongs_to :category
