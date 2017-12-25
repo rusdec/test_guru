@@ -9,6 +9,10 @@ class Test < ApplicationRecord
 
   belongs_to :category
 
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
   class << self
     def all_by_category(category_title)
       joins(:category).where(categories: { title: category_title }).order(title: :desc).pluck(:title)
