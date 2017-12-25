@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   has_many :test_authors
   has_many :created_tests, through: :test_authors, source: :test
-
+  
   def tests_by_level(level)
-    self.tests.where(level: level)
+    self.tests.by_level(level)
   end
 end
