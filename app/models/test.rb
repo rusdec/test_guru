@@ -1,8 +1,13 @@
 class Test < ApplicationRecord
-  has_and_belongs_to_many :users
+  has_many :test_passages
+  has_many :users, through: :test_passages
+
+  has_many :test_authors, dependent: :destroy
+  has_many :authors, through: :test_authors, source: :user
+
+  has_many :questions
 
   belongs_to :category
-  has_many :questions
 
   class << self
     def all_by_category(category_title)
