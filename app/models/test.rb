@@ -16,6 +16,13 @@ class Test < ApplicationRecord
   scope :by_level, -> (level) { where(level: level) }
   scope :by_category, -> (category) { joins(:category).where(categories: { title: category }).order(title: :desc) }
 
+  validates :title, presence: true
+  validates :level, presence: true,
+                    numericality: { only_integer: true }
+  validates :category_id, presence: true,
+                    numericality: { only_integer: true }
+  validates :title, uniqueness: { scope: :level }
+
   class << self
     def all_by_category(category)
       by_category(category).pluck(:title)
