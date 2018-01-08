@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228043547) do
+ActiveRecord::Schema.define(version: 20171227102105) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20171228043547) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "min_answers", default: 0
+    t.integer "min_answers", default: 1
     t.integer "max_answers", default: 4
   end
 

@@ -6,7 +6,10 @@ class Question < ApplicationRecord
   validates :body, presence: true
 
   validates :level, presence: true,
-                    numericality: { only_integer: true }
+                    numericality: {
+                                    only_integer: true,
+                                    greater_than_or_equal_to: 0 
+                                  }
 
   validates :test_id, presence: true,
                       numericality: { only_integer: true }
