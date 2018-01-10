@@ -17,14 +17,10 @@ class Question < ApplicationRecord
   validate :validation_answers_count_range, on: :update
 
   def validation_answers_count_range
-    if answers_count_out_of_range?
+    unless answers_count_in_range?
       error = "must include from #{min_answers} to #{max_answers} answers"
       errors.add(:question, error)
     end
-  end
-
-  def answers_count_out_of_range?
-    !answers_count_in_range?
   end
 
   def answers_count_in_range?

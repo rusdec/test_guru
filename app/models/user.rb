@@ -12,8 +12,4 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :password_digest, presence: true
-  
-  def tests_by_level(level)
-    self.tests.by_level(level)
-  end
 end
