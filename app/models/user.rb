@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :test_authors
   has_many :created_tests, through: :test_authors, source: :test
 
-  def tests_by_level(level)
-    self.tests.where(level: level)
-  end
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :password_digest, presence: true
 end
