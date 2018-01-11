@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227102105) do
+ActiveRecord::Schema.define(version: 20180111173920) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20171227102105) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "min_answers", default: 1
-    t.integer "max_answers", default: 4
   end
 
   create_table "role_users", force: :cascade do |t|
@@ -45,6 +43,15 @@ ActiveRecord::Schema.define(version: 20171227102105) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "setting", null: false
+    t.string "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["setting"], name: "index_settings_on_setting", unique: true
   end
 
   create_table "test_authors", force: :cascade do |t|
