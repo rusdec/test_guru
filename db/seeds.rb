@@ -26,7 +26,7 @@ def id(model, params)
   model.where(params).pluck(:id).first
 end
 
-models = [Role, User, Category, Test, TestPassage, Question, Answer]
+models = [Role, User, Category, Test, TestPassage, Question, Answer, Setting]
 models.each do |model|
   if model.count > 0
     data_was_clear(model) if model.destroy_all
@@ -35,6 +35,20 @@ models.each do |model|
   end
 end
 puts
+
+Setting.create!([
+  {
+    name: 'Макс. кол-во ответов на вопрос',
+    setting: 'max_answers',
+    value: '4'
+  },
+  {
+    name: 'Мин. кол-во ответов на вопрос',
+    setting: 'min_answers',
+    value: '1'
+  }
+])
+data_was_created(Setting)
 
 Role.create!([
 {
@@ -90,6 +104,7 @@ Category.create!([
   { title: 'Ruby' }
 ])
 data_was_created(Category)
+
 
 Test.create!([
   {
@@ -290,5 +305,6 @@ Answer.create!([
   }
 ])
 data_was_created(Answer)
+
 
 puts "\nТестовые данные созданы"
