@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
-  
   def index
-    render plain: 'Все тесты'
+    tests = Test.all
+    render plain: Test.all.pluck
   end
-
 end
