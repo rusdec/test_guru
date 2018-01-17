@@ -1,0 +1,7 @@
+<tr>
+  <td><%= test.category.title %></td>
+  <td><%= link_to test.title, test_path(test) %></td>
+  <td style="text-align: center"><%= test.level %></td>
+  <td><%= link_to 'Редактировать', edit_test_path(test) %></td>
+  <td><%= link_to 'Удалить', test_path(test), method: :delete %></td>
+</tr>

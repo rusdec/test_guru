@@ -2,6 +2,8 @@ class Question < ApplicationRecord
   belongs_to :test
 
   has_many :answers
+
+  default_scope { order(:level) }
   
   validates :body, presence: true
 

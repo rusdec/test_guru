@@ -1,0 +1,18 @@
+<h3>Название: <%= @test.title %></h3>
+<h3>Категория: <%= @test.category.title %></h3>
+<h3>Сложность: <%= @test.level %></h3>
+<h3>Вопросы:</h3>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th>Сложность</th>
+  </tr>
+  <% @test.questions.each do |question| %>
+  <tr>
+    <td><%= question.body %></td>
+    <td style="text-align: center"><%= question.level %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<%= render 'link_to_tests' %>

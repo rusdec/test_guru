@@ -1,0 +1,17 @@
+<%= form_with model: @test, local: true do |test| %>
+  <div>
+    <%= test.label :title, 'Название' %><br>
+    <%= test.text_area :title, id: :test_title, size: '30x3' %>
+  </div>
+  <div>
+    <%= test.label :level, 'Сложность' %><br>
+    <%= test.number_field :level, id: :test_level, in: 0..100 %>
+  </div>
+  <div>
+    <%= test.label :category_id, 'Категория' %><br>
+    <%= test.collection_select :category_id, Category.all, :id, :title %>
+  </div>
+  <div>
+    <%= test.submit %>
+  </div>
+<% end %>
