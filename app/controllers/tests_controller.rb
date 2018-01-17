@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   
-  before_action :find_test, only: %w[show update edit]
+  before_action :find_test, only: %i[show update edit]
 
   def index
     @tests = Test.all.order(:category_id, :title, :level)
