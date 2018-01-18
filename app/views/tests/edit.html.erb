@@ -3,3 +3,14 @@
 <p></p>
 <%= render 'shared/errors', resource: @test %>
 <%= render 'form' %>
+
+<h3>Вопросы</h3>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th style="text-align: center">Сложность</th>
+    <th colspan="3">Действия</th>
+  </tr>
+  <%= render @test.questions %>
+</table>
+<%= link_to 'Добавить вопрос', new_test_question_path(@test) %>

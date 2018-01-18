@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
-  before_action :find_question, only: %i[edit update show] 
+  before_action :find_question, only: %i[edit update show destroy] 
 
   def create
     @question = @test.questions.new(question_params)
@@ -39,6 +39,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @test = Test.find(@question.test_id)
   end
 
   private
