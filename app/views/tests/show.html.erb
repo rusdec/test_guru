@@ -7,12 +7,8 @@
     <th>Вопрос</th>
     <th>Сложность</th>
   </tr>
-  <% @test.questions.each do |question| %>
-  <tr>
-    <td><%= question.body %></td>
-    <td style="text-align: center"><%= question.level %></td>
-  </tr>
-  <% end %>
+  <%= render @test.questions %>
 </table>
+<%= link_to 'Добавить вопрос', new_test_question_path(@test) %>
 <br>
 <%= render 'link_to_tests' %>

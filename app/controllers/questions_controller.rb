@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create new]
+  before_action :find_test, only: %i[create new]
   before_action :find_question, only: %i[edit update show destroy] 
 
   def create
@@ -17,25 +17,23 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @test = Test.find(@question.test_id)
+    @test = @question.test
   end
 
   def update
-    @test = Test.find(@question.test_id)
-    @question.update(question_params)
+    @test = @question.test
 
-    if @question.errors.present?
-      render :edit
-    else
+    if @question.update(question_params)
       redirect_to @test
+    else
+      render :edit
     end
   end
 
   def destroy
-    @test = Test.find(@question.test_id)
     @question.destroy
 
-    redirect_to @test
+    redirect_to @question.test
   end
 
   def show

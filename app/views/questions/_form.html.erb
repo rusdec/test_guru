@@ -1,4 +1,5 @@
 <%= form_with model: model, local: true do |form| %>
+  <%= render 'shared/errors', resource: @question %>
   <div>
   <%= form.label :body, 'Вопрос:' %><br>
   <%= form.text_area :body, size: "40x10" %>

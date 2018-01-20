@@ -1,4 +1,5 @@
 <%= form_with model: @test, local: true do |test| %>
+  <%= render 'shared/errors', resource: @test %>
   <div>
     <%= test.label :title, 'Название' %><br>
     <%= test.text_area :title, id: :test_title, size: '30x3' %>
