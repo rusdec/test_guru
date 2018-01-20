@@ -1,0 +1,13 @@
+<%= form_with model: model, local: true do |form| %>
+  <%= render 'shared/errors', resource: @question %>
+  <div>
+  <%= form.label :body, 'Вопрос:' %><br>
+  <%= form.text_area :body, size: "40x10" %>
+  </div>
+  <div>
+  <%= form.label :level, 'Сложность:' %><br>
+  <%= form.number_field :level, in: 0..100 %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

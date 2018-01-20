@@ -1,12 +1,3 @@
-<%= form_tag "/tests/#{params[:test_id]}/questions" do %>
+<%= question_header(@question) %>
 
-  <div><%= label_tag 'body', 'Вопрос:' %></div>
-  <%= text_area_tag(:body, nil, size: '50x10') %>
-  <br>
-
-  <div><%= label_tag 'level', 'Сложость:' %></div>
-  <%= number_field_tag('level', '1', in: 1..100) %>
-  <br>
-
-  <%= submit_tag("Создать") %>
-<% end %>
+<%= render 'form', model: [@test, @question] %>
