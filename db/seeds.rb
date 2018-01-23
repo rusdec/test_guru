@@ -177,30 +177,6 @@ TestAuthor.create!([
 ])
 data_was_created(TestAuthor)
 
-TestPassage.create!([
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы CSS' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы HTML' }),
-    begin_at: Time.now
-  },
-])
-data_was_created(TestPassage)
-
 Question.create!([
   # Вопросы для "Основы CSS"
   {
@@ -305,6 +281,27 @@ Answer.create!([
   }
 ])
 data_was_created(Answer)
+
+TestPassage.create!([
+  {
+    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
+    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
+  },
+  {
+    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
+    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
+  },
+  {
+    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
+    test_id: id(Test, { title: 'Основы CSS' }),
+  },
+  {
+    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
+    test_id: id(Test, { title: 'Основы HTML' }),
+  },
+])
+data_was_created(TestPassage)
+
 
 
 puts "\nТестовые данные созданы"
