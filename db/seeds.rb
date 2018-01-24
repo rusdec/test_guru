@@ -177,30 +177,6 @@ TestAuthor.create!([
 ])
 data_was_created(TestAuthor)
 
-TestPassage.create!([
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы CSS' }),
-    begin_at: Time.now
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы HTML' }),
-    begin_at: Time.now
-  },
-])
-data_was_created(TestPassage)
-
 Question.create!([
   # Вопросы для "Основы CSS"
   {
@@ -286,7 +262,7 @@ Answer.create!([
   {
     body: 'Соглашение по именованию контроллеров в Rails устанавливает предпочтение множественного числа в последнем слове имени контроллера, хотя строго это не требуется (например, ApplicationController). К примеру, ClientsController более предпочтителен, чем ClientController, SiteAdminsController более предпочтителен, чем SiteAdminController или SitesAdminsController, и так далее.',
     question_id: id(Question, { body: 'Опишите соглашение об именовании контроллеров' }),
-    correct: true
+    correct: true,
   },
   {
     body: 'С помощью сильных параметров (strong parameters) параметры Action Controller запрещены к использованию в массовых назначениях Active Model до тех пор, пока они не добавлены в белый список. Это лучший способ предотвратить случайную уязвимость, позволяющую пользователям обновлять конфиденциальные атрибуты модели. Кроме того, параметры могут быть помечены как обязательные и будут проходить через предопределенные raise/rescue, что приведет к 400 Bad Request, если не будут переданы все обязательные параметры.',
@@ -305,6 +281,27 @@ Answer.create!([
   }
 ])
 data_was_created(Answer)
+
+TestPassage.create!([
+  {
+    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
+    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
+  },
+  {
+    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
+    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
+  },
+  {
+    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
+    test_id: id(Test, { title: 'Основы CSS' }),
+  },
+  {
+    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
+    test_id: id(Test, { title: 'Основы HTML' }),
+  },
+])
+data_was_created(TestPassage)
+
 
 
 puts "\nТестовые данные созданы"
