@@ -1,9 +1,0 @@
-<h3>Связанный ответ: <%= @answer.question.body %></h3>
-<h3>Ответ верный: <%= @answer.correct %></h3>
-<h3>Сортировка: <%= @answer.sort %></h3>
-<h3>Ответ:</h3>
-<%= @answer.body %>
-<p>
-<%= link_to 'Редактировать', edit_answer_path(@answer) %> |
-<%= link_to 'Вопрос', question_path(@answer.question) %>
-</p>
