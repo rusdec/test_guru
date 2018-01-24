@@ -1,1 +1,13 @@
-<h1>Тест пройден!</h1>
+<h1>Результат теста "<%= @test_passage.test.title %>"</h1>
+<table>
+  <tr>
+    <th style="text-align: left">Правильных ответов</th>
+    <td><%= result_percent(@test_passage) %>%</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Результат</th>
+    <td><%= test_passage_result(@test_passage) %></td>
+  </tr>
+</table>
+
+<%= link_to 'Все тесты', tests_path %>
