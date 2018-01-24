@@ -12,3 +12,8 @@
   <% end %>
   <%= form.submit 'Далее' %>
 <% end %>
+
+<p>
+  Вопрос <b><%= current_question_number(@test_passage) %></b>
+  из <b><%= questions_total(@test_passage) %></b>
+</p>

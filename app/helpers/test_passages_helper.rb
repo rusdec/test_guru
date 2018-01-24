@@ -14,6 +14,13 @@ module TestPassagesHelper
 
   private
 
+  def current_question_number(test_passage)
+    question_id = test_passage.current_question.id
+    question_ids = test_passage.test.questions.order(:id).pluck(:id)
+
+    question_ids.find_index(question_id) + 1
+  end
+
   def result_percent(test_passage)
     ((test_passage.correct_questions.to_f / questions_total(test_passage)) * 100).floor
   end
