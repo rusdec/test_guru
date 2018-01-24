@@ -2,23 +2,19 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   scope :correct, -> { where(correct: true) }
-  default_scope { order(:sort) }
   
   validates :body, presence: true
   validates :question_id, presence: true,
-                          numericality: {
-                            only_integer: true,
-                            greater_then_or_equal_to: 0
-                          }
+                          numericality: { only_integer: true }
 
-  validate :validate_answers_count_max, on: :create
+  validate :validate_answers_count_max
 
   private
 
   def validate_answers_count_max
     if answers_count_max?
       error = "must include from #{Setting.min_answers} to #{Setting.max_answers} answers"
-      errors.add(:question, error)
+      errors.add(:question_id, error)
     end
   end
 
