@@ -2,23 +2,22 @@ module TestPassagesHelper
 
   def test_passage_result(test_passage)
     result_percent = result_percent(test_passage)
-    message = "тест #{test_passage_result_status(result_percent)}"
-    message_color = test_passage_result_color(result_percent)
 
-    tag.span message, style: ["color: #{message_color}"]
+    tag.span "тест #{result_status(result_percent)}",
+             style: ["color: #{result_color(result_percent)}"]
+  end
+
+  def test_passage_progress(test_passage)
+    tag.p "Вопрос #{tag.b current_question_number(test_passage)} 
+           из #{tag.b questions_total(test_passage)}".html_safe
   end
 
   def questions_total(test_passage)
     test_passage.test.questions.count
   end
 
-  private
-
   def current_question_number(test_passage)
-    question_id = test_passage.current_question.id
-    question_ids = test_passage.test.questions.order(:id).pluck(:id)
-
-    question_ids.find_index(question_id) + 1
+    test_passage.test.questions.index(test_passage.current_question) + 1
   end
 
   def result_percent(test_passage)
@@ -29,7 +28,7 @@ module TestPassagesHelper
     85
   end
 
-  def test_passage_result_status(result_percent)
+  def result_status(result_percent)
     if result_percent >= minimal_good_percent
       'пройден'
     else
@@ -37,7 +36,7 @@ module TestPassagesHelper
     end
   end
 
-  def test_passage_result_color(result_percent)
+  def result_color(result_percent)
     if result_percent >= minimal_good_percent
       'green'
     else
