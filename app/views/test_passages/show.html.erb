@@ -1,0 +1,6 @@
+<h1>Прохождение теста "<%= @test_passage.test.title %>"</h1>
+
+<b><%= @test_passage.current_question.body %></b>
+<%= render 'form' %>
+
+<%= test_passage_progress(@test_passage) %>

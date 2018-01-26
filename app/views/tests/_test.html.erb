@@ -5,4 +5,5 @@
   <td style="text-align: center"><%= test.questions.count %></td>
   <td><%= link_to 'Редактировать', edit_test_path(test) %></td>
   <td><%= link_to 'Удалить', test_path(test), method: :delete %></td>
+  <td><%= button_to 'Начать тест', start_test_path(test) %></td>
 </tr>
