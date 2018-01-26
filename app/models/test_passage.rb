@@ -6,8 +6,7 @@ class TestPassage < ApplicationRecord
   validates :user_id, numericality: { only_integer: true }
   validates :test_id, numericality: { only_integer: true }
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question
+  before_validation :before_validation_set_next_question, on: %i[create update]
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -18,13 +17,25 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  private
-
-  def before_validation_set_first_question
-    self.current_question = test.questions.order(:id).first if test.present?
+  def questions_total
+    test.questions.count
   end
 
-  def before_update_set_next_question
+  def passing_percent
+    85
+  end
+
+  def success?
+    result_percent >= passing_percent
+  end
+
+  def result_percent
+    ((correct_questions.to_f / questions_total) * 100).floor
+  end
+
+  private
+
+  def before_validation_set_next_question
     self.current_question = next_question
   end
 
@@ -37,6 +48,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    if current_question.nil?
+      test.questions.order(:id).first
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 end
