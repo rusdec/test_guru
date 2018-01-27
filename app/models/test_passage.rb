@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   validates :user_id, numericality: { only_integer: true }
   validates :test_id, numericality: { only_integer: true }
 
-  before_validation :before_validation_set_next_question, on: %i[create update]
+  before_validation :before_validation_set_next_question
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
