@@ -1,0 +1,6 @@
+<% if logged_in? %>
+  <p class="nav user">
+    Добро пожаловать, <b><%= current_user.email %></b> Гуру
+    <%= link_to 'Выход', logout_path %>
+  </p>
+<% end %>
