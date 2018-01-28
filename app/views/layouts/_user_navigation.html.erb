@@ -1,6 +1,7 @@
 <ul class="nav_action_non_auth">
   <% if logged_in? %>
     <li><%= welcome_message(current_user) %></li>
+    <li><%= link_to 'Тесты', tests_path %></li>
     <li><%= link_to 'Выход', logout_path %></li>
   <% else %>
     <li><%= link_to 'Регистрация', signup_path %></li>
