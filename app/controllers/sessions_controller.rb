@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :already_authenticated_user!, only: %i[new]
+
   def new
   end
   

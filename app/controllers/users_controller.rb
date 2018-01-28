@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :already_authenticated_user!, only: %i[new]
+
   def new
     @user = User.new
   end

@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def already_authenticated_user!
+    redirect_to root_path if current_user
+  end
+
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
