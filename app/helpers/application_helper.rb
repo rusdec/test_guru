@@ -20,4 +20,8 @@ module ApplicationHelper
   def flash_message(param)
     content_tag :p, flash[param], class: 'flash alert' if flash[param]
   end
+
+  def welcome_message(user)
+    "Добро пожаловать, гуру #{tag.b user.email}".html_safe
+  end
 end

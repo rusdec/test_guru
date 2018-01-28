@@ -1,0 +1,24 @@
+.nav {
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+
+  a {text-decoration: none;}
+
+  .nav_logo {
+    font-size: 25px;
+    font-color: light-blue;
+  }
+
+  .nav_action {
+    text-align: right;
+    .nav_action_non_auth {
+      li {padding-left: 5px;}
+    }
+  }
+
+  .nav_action_non_auth {
+    li { display: inline; }
+  }
+
+}
