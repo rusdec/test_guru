@@ -25,7 +25,7 @@ class User < ApplicationRecord
   private
 
   def validate_email_format
-    errors.add(:user, 'Bad email fromat') unless email_format =~ email
+    errors.add(:email, 'Bad email format') unless email_format =~ email
   end
 
   def email_format
