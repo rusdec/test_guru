@@ -3,7 +3,7 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
   default_scope { order(:sort) }
-  
+
   validates :body, presence: true
   validates :question_id, presence: true,
                           numericality: {
