@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class="nav user">Добро пожаловать, <b><%= current_user.email %></b> Гуру</p>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

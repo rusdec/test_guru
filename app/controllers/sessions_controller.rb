@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
+      flash.now[:alert] = "Авторизуйтесь с помощью эл.почты и пароля"
       render :new
     end
   end
