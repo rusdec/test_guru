@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to session[:target_request] ? session[:target_request] : root_path
+      redirect_to session[:target_request] || root_path
     else
       flash.now[:alert] = "Авторизуйтесь с помощью эл.почты и пароля"
       render :new
