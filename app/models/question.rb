@@ -4,14 +4,12 @@ class Question < ApplicationRecord
   has_many :answers
 
   default_scope { order(:level) }
-  
+
   validates :body, presence: true
 
   validates :level, presence: true,
-                    numericality: {
-                                    only_integer: true,
-                                    greater_than_or_equal_to: 0 
-                                  }
+                    numericality: { only_integer: true,
+                                    greater_than_or_equal_to: 0 }
 
   validates :test_id, presence: true,
                       numericality: { only_integer: true }
@@ -27,5 +25,5 @@ class Question < ApplicationRecord
 
   def answers_count_in_range?
     Setting.answers_range.include?(answers.count)
-  end  
+  end
 end
