@@ -13,8 +13,12 @@ module ApplicationHelper
     link_to title, '//thinknetica.com/', target: '_blank'
   end
 
-  def flash_message(param)
-    content_tag :p, flash[param], class: 'flash alert' if flash[param]
+  def flash_messages
+    flash.map { |type, message| flash_message(message, type) }.join.html_safe
+  end
+
+  def flash_message(message, type)
+    content_tag :p, message, class: "flash #{type}" if message
   end
 
   def welcome_message(user)
