@@ -1,10 +1,10 @@
 <ul class="nav_action_non_auth">
-  <% if logged_in? %>
+  <% if user_signed_in? %>
     <li><%= welcome_message(current_user) %></li>
     <li><%= link_to 'Тесты', tests_path %></li>
-    <li><%= link_to 'Выход', logout_path %></li>
+    <li><%= link_to 'Выход', destroy_user_session_path , method: :delete %></li>
   <% else %>
-    <li><%= link_to 'Регистрация', signup_path %></li>
-    <li><%= link_to 'Войти', login_path %></li>
+    <li><%= link_to 'Регистрация', new_user_registration_path %></li>
+    <li><%= link_to 'Войти', new_user_session_path %></li>
   <% end %>
 </ul>

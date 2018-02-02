@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
   root 'main#show'
-
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  get :logout, to: 'sessions#destroy'
-
-  resources :users, only: :create
-  resources :sessions, only: :create
 
   resources :tests do
     resources :questions, shallow: true do
@@ -21,4 +14,5 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
