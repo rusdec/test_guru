@@ -4,6 +4,6 @@
 <h3>Ответ:</h3>
 <%= @answer.body %>
 <p>
-<%= link_to 'Редактировать', edit_answer_path(@answer) %> |
-<%= link_to 'Вопрос', question_path(@answer.question) %>
+<%= link_to 'Редактировать', edit_admin_answer_path(@answer) %> |
+<%= link_to 'Вопрос', admin_question_path(@answer.question) %>
 </p>

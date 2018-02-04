@@ -19,4 +19,6 @@
   <%= render @question.answers %>
 </table>
 
-<%= link_to 'Добавить ответ', new_question_answer_path(@question) %>
+<%= link_to 'Добавить ответ', new_admin_question_answer_path(@question) %>
+<br>
+<%= link_to "Тест \"#{@question.test.title}\"", admin_test_path(@question.test) %>

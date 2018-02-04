@@ -8,8 +8,8 @@
     <th>Сложность</th>
     <th>Ответов</th>
   </tr>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @test.questions %>
 </table>
-<%= link_to 'Добавить вопрос', new_test_question_path(@test) %>
+<%= link_to 'Добавить вопрос', new_admin_test_question_path(@test) %>
 <br>
 <%= render 'link_to_tests' %>

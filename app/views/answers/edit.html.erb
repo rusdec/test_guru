@@ -1,9 +1,0 @@
-<%= answer_header(@answer) %>
-<h3>Вопрос: <%= @answer.question.body %></h3>
-
-<%= render 'form', answer: @answer %>
-
-<p>
-<%= link_to 'Показать', answer_path(@answer) %><br> 
-<%= link_to 'Вопрос', question_path(@answer.question) %>
-</p>

@@ -1,7 +1,6 @@
-<%= form_with(model: [@question, @answer], local: true) do |form| %>
- 
+<%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
   <%= render 'shared/errors', resource: @answer %>
- 
+
   <div class="field">
     <%= form.label :body, 'Ответ' %>
     <%= form.text_field :body, id: :answer_body %>
