@@ -1,0 +1,27 @@
+.admin_nav {
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid darkred;
+  background-color: darkred;
+  color: white;
+  
+  a {text-decoration: none;}
+
+  .nav_logo {
+    font-size: 25px;
+  }
+
+  span { font-size: 12px }
+
+  .nav_action {
+    text-align: right;
+    .nav_action_non_auth {
+      li {padding-left: 5px;}
+    }
+  }
+
+  .nav_action_non_auth {
+    li { display: inline; }
+  }
+
+}
