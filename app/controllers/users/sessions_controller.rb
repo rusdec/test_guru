@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super do |resource|
-      set_flash_message!(:success, :signed_in_greeting, user_name: helpers.full_name(resource))
+      set_flash_message!(:success, :signed_in_greeting, user_name: resource.full_name)
     end
   end
 
