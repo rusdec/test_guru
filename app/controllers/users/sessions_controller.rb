@@ -9,9 +9,14 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
+  def create
   #  super
-  # end
+    self.resource = warden.authenticate!(auth_options)
+    set_flash_message!(:success, :signed_in_greeting, user_name: user_name(resource))
+    sign_in(resource_name, resource)
+    yield resource if block_given?
+    respond_with resource, location: after_sign_in_path_for(resource)
+  end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -28,12 +33,14 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   def after_sign_in_path_for(resource)
-    user_name = "#{current_user.first_name} #{current_user.last_name}"
-    set_flash_message(:success, :signed_in_greeting, user_name: user_name)
     if resource.is_a?(Admin)
       admin_tests_path
     else
       tests_path
     end
+  end
+
+  def user_name(resource)
+    "#{resource.first_name} #{resource.last_name}"
   end
 end
