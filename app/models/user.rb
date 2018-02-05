@@ -31,6 +31,10 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def admin?
+    is_a?(Admin)
+  end
+
   private
 
   def validate_email_format
