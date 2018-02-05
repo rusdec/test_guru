@@ -28,10 +28,12 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   def after_sign_in_path_for(resource)
+    user_name = "#{current_user.first_name} #{current_user.last_name}"
+    set_flash_message(:success, :signed_in_greeting, user_name: user_name)
     if resource.is_a?(Admin)
       admin_tests_path
     else
-      root_path
+      tests_path
     end
   end
 end
