@@ -36,8 +36,4 @@ class Users::SessionsController < Devise::SessionsController
       tests_path
     end
   end
-
-  def user_name(resource)
-    "#{resource.first_name} #{resource.last_name}"
-  end
 end
