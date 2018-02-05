@@ -1,0 +1,16 @@
+<h3>Название: <%= @test.title %></h3>
+<h3>Категория: <%= @test.category.title %></h3>
+<h3>Сложность: <%= @test.level %></h3>
+<h3>Авторы: <%= test_authors(@test.authors) %>
+<h3>Вопросы:</h3>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th>Сложность</th>
+    <th>Ответов</th>
+  </tr>
+  <%= render @test.questions %>
+</table>
+<%= link_to 'Добавить вопрос', new_admin_test_question_path(@test) %>
+<br>
+<%= render 'link_to_tests' %>

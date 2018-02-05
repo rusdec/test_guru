@@ -1,0 +1,5 @@
+<h1><%= answer_header(@answer) %></h1>
+<h3>Вопрос: <%= @question.body %></h3>
+<%= render 'form' %>
+
+<%= link_to 'Вопрос', admin_question_path(@question) %>

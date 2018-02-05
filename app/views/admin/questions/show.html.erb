@@ -1,0 +1,24 @@
+<h3>Тест: <%= @test.title %>
+<h3>Сложность: <%= @question.level %></h3>
+<h3>Вопрос:</h3>
+<p><%= @question.body %></p>
+
+<h3>Ответы:</h3>
+<table>
+  <tr>
+    <th>
+      Ответ
+    </th>
+    <th>
+      Верный?
+    </th>
+    <th>
+      Сортировка
+    </th>
+  </tr>
+  <%= render @question.answers %>
+</table>
+
+<%= link_to 'Добавить ответ', new_admin_question_answer_path(@question) %>
+<br>
+<%= link_to "Тест \"#{@question.test.title}\"", admin_test_path(@question.test) %>

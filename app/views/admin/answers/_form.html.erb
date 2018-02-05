@@ -1,0 +1,21 @@
+<%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
+
+  <div class="field">
+    <%= form.label :body, 'Ответ' %>
+    <%= form.text_field :body, id: :answer_body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correct, 'Ответ верный?' %>
+    <%= form.check_box :correct, id: :answer_correct, include_hidden: false %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sort, 'Сортировка' %>
+    <%= form.number_field :sort, id: :answer_sort, in: 0..Setting.max_answers %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
