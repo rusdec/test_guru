@@ -16,6 +16,6 @@ module TestGuru
     # -- all .rb files in that directory are automatically loaded.
 
     config.time_zome = "Moscow"
-    config.i18n.default_locale :ru
+    config.i18n.default_locale = :ru
   end
 end
