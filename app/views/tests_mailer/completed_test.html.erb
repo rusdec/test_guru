@@ -1,7 +1,7 @@
-<h1><%= I18n.t('tests_mailer.html.completed_tests.header') %></h1>
+<h1><%= t('tests_mailer.html.completed_tests.header') %></h1>
 
 <p>
-<%= I18n.t('tests_mailer.html.completed_tests.congratulation', test_title: @test.title).html_safe%><br>
-<%= I18n.t('tests_mailer.html.completed_tests.how_about') %>
-<%= link_to I18n.t('tests_mailer.html.completed_tests.other_tests'), tests_url %>?
+<%= t('tests_mailer.html.completed_tests.congratulation', test_title: @test.title).html_safe%><br>
+<%= t('tests_mailer.html.completed_tests.how_about') %>
+<%= link_to t('tests_mailer.html.completed_tests.other_tests'), tests_url %>?
 </p>
