@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def default_url_options
-    { lang: I18n.locale }
+    if I18n.default_locale == I18n.locale
+      Rails.application.config.action_controller.default_url_options
+    else
+      Rails.application.config.action_controller.default_url_options.merge(lang: I18n.locale)
+    end
   end
 
   private
