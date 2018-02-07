@@ -27,6 +27,8 @@ en:
         subject: "Email Changed"
       password_change:
         subject: "Password Changed"
+      completed_test:
+        subject: "You have completed the test!"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -46,9 +48,9 @@ en:
       updated: "Your account has been updated successfully."
     sessions:
       signed_in: "Signed in successfully."
-      signed_in_greeting: "Hello, %{user_name}!"
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      signed_in_greeting: "Hello, %{user_name}!"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

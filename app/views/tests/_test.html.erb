@@ -3,5 +3,5 @@
   <td><%= test.title %></td>
   <td style="text-align: center"><%= test.level %></td>
   <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= button_to 'Начать тест', start_test_path(test) %></td>
+  <td><%= button_to t('.start_test'), start_test_path(test) %></td>
 </tr>

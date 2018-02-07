@@ -1,6 +1,7 @@
-<h1>Ура!</h1>
+<h1><%= I18n.t('tests_mailer.html.completed_tests.header') %></h1>
 
 <p>
-Поздравляем! Вы завершили тест <b><%= @test.title %></b>.
-Как на счёт <%= link_to 'других тестов', tests_url %>?
+<%= I18n.t('tests_mailer.html.completed_tests.congratulation', test_title: @test.title).html_safe%><br>
+<%= I18n.t('tests_mailer.html.completed_tests.how_about') %>
+<%= link_to I18n.t('tests_mailer.html.completed_tests.other_tests'), tests_url %>?
 </p>

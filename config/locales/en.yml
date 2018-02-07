@@ -32,11 +32,68 @@
 en:
   hello: "Hello world"
   
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
   tests:
     index:
       header: "Tricky Tests"
+      category: "Category"
+      title: "Title"
+      level: "Level"
+      quantity_of_questions: "Quantity of questions"
+      actions: "Actions"
+    test:
+      start_test: "Start test"
 
   admin:
     tests:
       index:
         header: "Tricky Tests"
+        category: "Category"
+        title: "Title"
+        level: "Level"
+        quantity_of_questions: "Quantity of questions"
+        actions: "Actions"
+        new_test: "New test"
+      new:
+        header: "New test"
+      edit:
+        header: "Edit test"
+      show:
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        authors: "Authors"
+        questions: "Questions"
+        question: "Questions"
+        quantity_of_answers: "Quantity of answers"
+        new_question: "New question"
+      link_to_tests:
+        all_tests: "All tests"
+      form:
+        title: "Title"
+      test:
+        edit: "Edit"
+        delete: "Delete"
+        category: "Category"
+        level: "Level"
+
+  test_passages:
+    form:
+      next: "Next"
+    result:
+      header: "Test result"
+      right_answers: "Right answers"
+      result: "Result"
+      all_tests: "All tests"
+    show:
+      header: "Passing test"

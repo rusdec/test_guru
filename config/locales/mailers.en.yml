@@ -1,0 +1,4 @@
+en:
+  tests_mailer:
+    completed_test:
+      subject: "You have completed the test!"

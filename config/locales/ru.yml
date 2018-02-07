@@ -1,11 +1,64 @@
 ru:
   hello: "Привет, мир"
 
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
   tests:
     index:
       header: "Доступные Тесты"
+      category: "Категория"
+      title: "Название"
+      level: "Уровень"
+      quantity_of_questions: "Кол-во вопросов"
+      actions: "Действия"
+    test:
+      start_test: "Начать тест"
 
   admin:
     tests:
       index:
         header: "Доступные Тесты"
+        category: "Категория"
+        title: "Название"
+        level: "Уровень"
+        quantity_of_questions: "Кол-во вопросов"
+        actions: "Действия"
+        new_test: "Новый тест"
+      new:
+        header: "Новый тест"
+      edit:
+        header: "Редактировать тест"
+      show:
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+        authors: "Авторы"
+        questions: "Вопросы"
+        question: "Вопрос"
+        quantity_of_answers: "Кол-во ответов"
+        new_question: "Новый вопрос"
+      link_to_tests:
+        all_tests: "Все тесты"
+      test:
+        edit: "Редактировать"
+        delete: "Удалить"
+
+  test_passages:
+    form:
+      next: "Далее"
+    result:
+      header: "Результат теста"
+      right_answers: "Правильных ответов"
+      result: "Результат"
+      all_tests: "Все тесты"
+    show:
+      header: "Прохождение теста"

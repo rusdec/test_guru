@@ -1,4 +1,4 @@
-Ура!
+<%= I18n.t('tests_mailer.text.completed_tests.header') %>
 ====
 
-Поздравляем! Вы завершили тест "<%= @test.title %>". Выберите следующий тест: <%= tests_url %>
+<%= I18n.t('tests_mailer.text.completed_tests.body', test_title: @test.title, tests_url: tests_url) %>
