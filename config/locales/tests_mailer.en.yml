@@ -1,0 +1,8 @@
+en:
+  tests_mailer:
+    completed_tests:
+      header: "Hooray!"
+      html_congratulation: "Congratulations! You have completed the test <b>%{test_title}</b>"
+      html_how_about: "How about"
+      html_other_tests: "other tests"
+      text_body: "Congratulations! You have completed the test \"%{test_title}\". Change your next test: %{tests_url}"

@@ -1,7 +1,6 @@
-<h1><%= t('tests_mailer.html.completed_tests.header') %></h1>
+<h1><%= t('.header') %></h1>
 
 <p>
-<%= t('tests_mailer.html.completed_tests.congratulation', test_title: @test.title).html_safe%><br>
-<%= t('tests_mailer.html.completed_tests.how_about') %>
-<%= link_to t('tests_mailer.html.completed_tests.other_tests'), tests_url %>?
+<%= t('.html_congratulation', test_title: @test.title).html_safe%><br>
+<%= t('.html_how_about') %> <%= link_to t('.html_other_tests'), tests_url %>?
 </p>
