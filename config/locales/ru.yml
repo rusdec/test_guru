@@ -1,16 +1,16 @@
 ru:
   hello: "Привет, мир"
 
-  helpers:
-    submit:
-      test:
-        create: "Создать тест"
-        update: "Обновить тест"
-    label:
-      test:
-        title: "Название"
-        level: "Уровень"
-        category_id: "Категория"
+  layouts:
+    admin:
+      title: "Админ панель"
+    admin_header:
+      administration: "[Администрирование]" 
+    user_navigation:
+      tests: "Тесты"
+      logout: "Выход"
+      registration: "Регистрация"
+      sign_in: "Войти"
 
   tests:
     index:
@@ -51,6 +51,9 @@ ru:
       test:
         edit: "Редактировать"
         delete: "Удалить"
+      form:
+        select:
+          prompt: "Выберите категорию"
 
   test_passages:
     form:
@@ -62,3 +65,25 @@ ru:
       all_tests: "Все тесты"
     show:
       header: "Прохождение теста"
+
+  helpers:
+    submit:
+      user:
+        create: "Войти"
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Эл.почта"
+        password: "Пароль"
+        password_confirmation: "Повторите пароль"
+        remember_me: "Запомнить меня"
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите..."

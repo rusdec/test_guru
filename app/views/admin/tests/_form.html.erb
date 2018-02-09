@@ -10,7 +10,7 @@
   </div>
   <div>
     <%= test.label :category_id %><br>
-    <%= test.collection_select :category_id, Category.all, :id, :title %>
+    <%= test.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </div>
   <div>
     <%= test.submit %>
