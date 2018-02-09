@@ -1,4 +1,4 @@
-<h1><%= t('.header') %> "<%= @test_passage.test.title %>"</h1>
+<h1><%= t('.header', test_title: @test_passage.test.title) %></h1>
 <table>
   <tr>
     <th style="text-align: left"><%= t('.right_answers') %></th>

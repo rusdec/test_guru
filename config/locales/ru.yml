@@ -56,7 +56,7 @@ ru:
     form:
       next: "Далее"
     result:
-      header: "Результат теста"
+      header: "Результат теста \"%{test_title}\""
       right_answers: "Правильных ответов"
       result: "Результат"
       all_tests: "Все тесты"

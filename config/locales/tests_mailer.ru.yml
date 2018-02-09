@@ -1,8 +1,0 @@
-ru:
-  tests_mailer:
-    completed_test:
-      header: "Ура!"
-      html_congratulation: "Поздравляем! Вы завершили тест <b>%{test_title}</b>"
-      html_how_about: "Как насчёт"
-      html_other_tests: "других тестов"
-      text_body: "Поздравляем! Вы завершили тест \"%{test_title}\". Выберите следующий тест: %{tests_url}"

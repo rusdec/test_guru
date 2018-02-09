@@ -91,7 +91,7 @@ en:
     form:
       next: "Next"
     result:
-      header: "Test result"
+      header: "Result test \"%{test_title}\""
       right_answers: "Right answers"
       result: "Result"
       all_tests: "All tests"
