@@ -54,7 +54,11 @@ ru:
       new:
         header: "Регистрация"
         sign_up: "Регистрация"
-        minimum_characters: "(минимум %{minimum_password_length} символов)"
+        minimum_characters:
+          one: "(минимум %{count} символ)"
+          few: "(минимум %{count} символа)"
+          many: "(минимум %{count} символов)"
+          other: "(минимум %{count} символов)"
         first_name: "Имя"
         last_name: "Фамилия"
         email: "Эл.почта"
@@ -91,4 +95,6 @@ ru:
       not_locked: "не заблокирована"
       not_saved:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
-        other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+        few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        other: "%{resource}: сохранение не удалось из-за %{count} ошибок"

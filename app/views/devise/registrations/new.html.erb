@@ -21,7 +21,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em><%= t('.minimum_characters', minimum_password_length: @minimum_password_length) %></em>
+    <em><%= t('.minimum_characters', count: @minimum_password_length) %></em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>

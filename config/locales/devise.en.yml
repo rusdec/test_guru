@@ -56,7 +56,9 @@ en:
       new:
         header: "Sign up"
         sign_up: "Sign up"
-        minimum_characters: "(%{minimum_password_length} characters minimum)"
+        minimum_characters:
+          one: "(%{count} character minimum)"
+          other: "(%{count} characters minimum)"
         first_name: "First name"
         last_name: "Last name"
         email: "Email"
