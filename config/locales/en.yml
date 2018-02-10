@@ -31,3 +31,91 @@
 
 en:
   hello: "Hello world"
+
+  layouts:
+    admin:
+      title: "Admin Panel"
+    admin_header:
+      administration: "[Administration]" 
+    user_navigation:
+      tests: "Tests"
+      logout: "Logout"
+      registration: "Registration"
+      sign_in: "Sign in"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      category: "Category"
+      title: "Title"
+      level: "Level"
+      quantity_of_questions: "Quantity of questions"
+      actions: "Actions"
+    test:
+      start_test: "Start test"
+
+  admin:
+    tests:
+      index:
+        header: "Tricky Tests"
+        category: "Category"
+        title: "Title"
+        level: "Level"
+        quantity_of_questions: "Quantity of questions"
+        actions: "Actions"
+        new_test: "New test"
+      new:
+        header: "New test"
+      edit:
+        header: "Edit test"
+      show:
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        authors: "Authors"
+        questions: "Questions"
+        question: "Questions"
+        quantity_of_answers: "Quantity of answers"
+        new_question: "New question"
+      link_to_tests:
+        all_tests: "All tests"
+      form:
+        title: "Title"
+      test:
+        edit: "Edit"
+        delete: "Delete"
+        category: "Category"
+        level: "Level"
+
+  test_passages:
+    form:
+      next: "Next"
+    result:
+      header: "Result test \"%{test_title}\""
+      right_answers: "Right answers"
+      result: "Result"
+      all_tests: "All tests"
+    show:
+      header: "Passing test"
+
+  helpers:
+    submit:
+      user:
+        create: "Log in"
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember_me: "Remember me"
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Select..."

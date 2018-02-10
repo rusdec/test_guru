@@ -1,13 +1,13 @@
-<h1>Результат теста "<%= @test_passage.test.title %>"</h1>
+<h1><%= t('.header', test_title: @test_passage.test.title) %></h1>
 <table>
   <tr>
-    <th style="text-align: left">Правильных ответов</th>
+    <th style="text-align: left"><%= t('.right_answers') %></th>
     <td><%= @test_passage.result_percent %>%</td>
   </tr>
   <tr>
-    <th style="text-align: left">Результат</th>
+    <th style="text-align: left"><%= t('.result') %></th>
     <td><%= test_passage_result(@test_passage) %></td>
   </tr>
 </table>
 
-<%= link_to 'Все тесты', tests_path %>
+<%= link_to t('.all_tests'), tests_path %>
