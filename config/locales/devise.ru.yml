@@ -62,6 +62,9 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         email: "Эл.почта"
+        placeholder_first_name: "Иван"
+        placeholder_last_name: "Иванов"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Редактировать %{resource_name}"
         email: "Эл.почта"
@@ -78,6 +81,7 @@ ru:
       new:
         header: "Вход"
         sign_in: "Войти"
+        placeholder_email: "example@domain.com"
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       send_paranoid_instructions: "Если ваша учётная запись существует, то в течение нескольких минут вы получите письмо с инструкциями по её разблокировке."
