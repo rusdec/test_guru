@@ -18,10 +18,34 @@ module ApplicationHelper
   end
 
   def flash_message(message, type)
-    content_tag :p, message, class: "flash #{type}" if message
+    content_tag :div,
+                flash_content(message),
+                class: "alert #{flash_type(type)} mt-3" if message
   end
 
   def page_header(header_text)
     content_tag :p, header_text, class: 'h1 text-center p-3'
+  end
+
+  private
+
+  def flash_type(type)
+    case type
+    when 'alert' then 'alert-danger'
+    when 'success' then 'alert-success'
+    when 'warning' then 'alert-warning'
+    else
+      'alert-info'
+    end
+  end
+
+  def flash_content(message)
+    "#{message}#{close_button}".html_safe
+  end
+
+  def close_button
+    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>'
   end
 end

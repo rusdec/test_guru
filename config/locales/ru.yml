@@ -6,7 +6,7 @@ ru:
       title: "Админ панель"
     nav:
       registration: "Регистрация"
-      administration: "Администраирование"
+      administration: "Администрирование"
       tests: "Тесты"
       logout: "Выход"
       sign_in: "Войти"

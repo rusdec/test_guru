@@ -17,7 +17,7 @@
   <body>
     <%= render 'layouts/nav' %>
     <div class="container">
-      <div><%= flash_messages %></div>
+      <%= render 'shared/flash' %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
