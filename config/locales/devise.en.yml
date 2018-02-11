@@ -92,6 +92,7 @@ en:
         header: "Resend unlock instructions"
         email: "Email"
         resend_unlock_instructions: "Resend unlock instructions"
+        placeholder_email: "example@domain.com"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

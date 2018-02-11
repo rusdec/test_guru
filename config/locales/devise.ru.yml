@@ -92,6 +92,7 @@ ru:
         header: "Выслать инструкцию по разблокировки"
         email: "Эл.почта"
         resend_unlock_instructions: "Выслать инструкцию по разблокировки"
+        placeholder_email: "example@domain.com"
   errors:
     messages:
       already_confirmed: "уже подтверждена. Пожалуйста, попробуйте войти в систему"
