@@ -41,6 +41,7 @@ en:
         header: "Forgot your password?"
         email: "Email"
         send_me_instruction: "Send me reset password instructions"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Change your password"
         new_password: "New password"
