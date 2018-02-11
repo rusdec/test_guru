@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  get :admin, to: "admin/home#index"
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true do

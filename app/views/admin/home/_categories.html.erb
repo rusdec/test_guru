@@ -1,0 +1,27 @@
+<div class="col-md-6 text-xs-center">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title"><%= t('.tests') %></h3>
+      <p class="card-text">
+        <%= link_to t('.edit'), admin_tests_path, class: "btn btn-primary" %>
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <%= t('.tests_count', count: @tests.count) %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 text-xs-center">
+  <div class="card">
+    <div class="card-block">
+      <h3 class="card-title"><%= t('.users') %></h3>
+      <p class="card-text">
+        <%= link_to t('.edit'), '#', class: "btn btn-primary" %>
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <%= t('.users_count', count: @users.count) %>
+    </div>
+  </div>
+</div>

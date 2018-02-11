@@ -21,7 +21,7 @@ module ApplicationHelper
     content_tag :p, message, class: "flash #{type}" if message
   end
 
-  def welcome_message(user)
-    "Добро пожаловать, гуру #{tag.b user.email}".html_safe
+  def page_header(header_text)
+    content_tag :p, header_text, class: 'h1 text-center p-3'
   end
 end

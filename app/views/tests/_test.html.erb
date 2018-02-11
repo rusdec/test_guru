@@ -1,7 +1,35 @@
-<tr>
-  <td><%= test.category.title %></td>
-  <td><%= test.title %></td>
-  <td style="text-align: center"><%= test.level %></td>
-  <td style="text-align: center"><%= test.questions.count %></td>
-  <td><%= button_to t('.start_test'), start_test_path(test) %></td>
-</tr>
+<div class="col-md-4 text-xs-center">
+
+  <div class="card">
+
+    <div class="card-block">
+      <h4 class="card-title"><%= test.title %></h4>
+      <span class="text-muted"><small><%= test.category.title %></small></span>
+      <p class="card-text">
+        <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
+      </p>
+    </div>
+
+    <div class="card-footer text-muted p-1">
+      <div class="d-flex justify-content-start">
+        <div class="mr-auto p-1 text-left">
+          <ul class="list-unstyled flex-md-row mb-0">
+            <li class="nav-item">
+              <small><%= t('.test_level', test_level: test.level) %></small>
+            </li>
+            <li class="nav-item">
+              <small><%= t('.question_count', question_count: test.questions.count) %></small>
+            </li>
+          </ul>
+        </div>
+        <div class="p-1 align-self-center">
+          <span class="align-middle">
+            <i class="fas fa-user"></i> <%= test.users.count %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
