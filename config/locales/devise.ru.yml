@@ -15,6 +15,7 @@ ru:
       new:
         header: "Выслать инструкции по подтверждению"
         resend_confirmation_instructions: "Выслать инструкции по подтверждению"
+        placeholder_email: "example@domain.com"
     failure:
       already_authenticated: "Вы уже вошли в систему."
       inactive: "Ваша учётная запись ещё не активирована."

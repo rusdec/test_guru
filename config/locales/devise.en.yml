@@ -17,6 +17,7 @@ en:
       new:
         header: "Resend confirmation instructions"
         resend_confirmation_instructions: "Resend confirmation instructions"
+        placeholder_email: "example@domain.com"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
