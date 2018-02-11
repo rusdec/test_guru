@@ -85,6 +85,16 @@ ru:
     show:
       header: "Прохождение теста"
 
+  main:
+    index:
+      header: "Мир гуруметрии"
+      tests: "Тесты"
+      statistics: "Статистика" 
+      self_assessment: "Оценка себя"
+      passage_tests: "Проходи различные тесты!"
+      compare_your_results: "Сравнивай свои результаты с остальными!"
+      how_guru_are_you: "Проверяй, насколько ты гуру!"
+
   helpers:
     submit:
       user:

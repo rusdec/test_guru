@@ -1,0 +1,33 @@
+<%= page_header(t('.header').upcase) %>
+
+<div class="card-deck text-center">
+  <div class="card">
+    <div class="text-white bg-cyan2 p-5">
+      <i class="fa fa-5x fa-list" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= t('.tests').upcase %></h5>
+      <p class="card-text"><%= t('.passage_tests') %></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="text-white bg-cyan4 p-5">
+     <i class="fas fa-5x fa-chart-bar" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= t('.statistics').upcase %></h5>
+      <p class="card-text"><%= t('.compare_your_results') %></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="text-white bg-cyan6 p-5">
+     <i class="fa fa-5x fa-child" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= t('.self_assessment').upcase %></h5>
+      <p class="card-text"><%= t('.how_guru_are_you') %></p>
+    </div>
+  </div>
+</div>
