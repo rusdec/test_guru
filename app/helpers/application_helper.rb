@@ -14,13 +14,13 @@ module ApplicationHelper
   end
 
   def flash_messages
-    flash.map { |type, message| flash_message(message, type) }.join.html_safe
+    flash.map { |klass, message| flash_message(message, klass) }.join.html_safe
   end
 
   def flash_message(message, klass)
     content_tag :div,
                 flash_content(message),
-                class: "alert #{flash_class(klass)} mt-3" if message
+                class: "alert #{flash_class(klass.to_sym)} mt-3" if message
   end
 
   def page_header(header_text)
@@ -29,15 +29,17 @@ module ApplicationHelper
 
   private
 
+  FLASH_KLASSES = {
+    alert:    'alert-danger',
+    success:  'alert-success',
+    warning:  'alert-warning',
+    notice:   'alert-info'
+  }.freeze
+
+  FLASH_KLASS_DEFAULT = FLASH_KLASSES[:notice]
+
   def flash_class(klass)
-    flash_classes = {
-      alert: 'alert-danger',
-      success: 'alert-success',
-      warning: 'alert-warning',
-      notice: 'alert-info'
-    }
-    
-    flash_classes[klass.to_sym] || flash_classes[:notice]
+    FLASH_KLASSES[klass] || FLASH_KLASS_DEFAULT
   end
 
   def flash_content(message)
