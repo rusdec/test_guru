@@ -17,10 +17,10 @@ module ApplicationHelper
     flash.map { |type, message| flash_message(message, type) }.join.html_safe
   end
 
-  def flash_message(message, type)
+  def flash_message(message, klass)
     content_tag :div,
                 flash_content(message),
-                class: "alert #{flash_type(type)} mt-3" if message
+                class: "alert #{flash_class(klass)} mt-3" if message
   end
 
   def page_header(header_text)
@@ -29,14 +29,15 @@ module ApplicationHelper
 
   private
 
-  def flash_type(type)
-    case type
-    when 'alert' then 'alert-danger'
-    when 'success' then 'alert-success'
-    when 'warning' then 'alert-warning'
-    else
-      'alert-info'
-    end
+  def flash_class(klass)
+    flash_classes = {
+      alert: 'alert-danger',
+      success: 'alert-success',
+      warning: 'alert-warning',
+      notice: 'alert-info'
+    }
+    
+    flash_classes[klass.to_sym] || flash_classes[:notice]
   end
 
   def flash_content(message)
@@ -44,8 +45,14 @@ module ApplicationHelper
   end
 
   def close_button
-    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-     </button>'
+    button_tag close_symbol,
+               type: 'button',
+               class: 'close',
+               'data-dismiss': 'alert',
+               'aria-label': 'Close'
+  end
+
+  def close_symbol
+    tag.span("&times;".html_safe, aria_hidden: true)
   end
 end
