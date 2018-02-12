@@ -17,6 +17,7 @@ en:
       new:
         header: "Resend confirmation instructions"
         resend_confirmation_instructions: "Resend confirmation instructions"
+        placeholder_email: "example@domain.com"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -40,6 +41,7 @@ en:
         header: "Forgot your password?"
         email: "Email"
         send_me_instruction: "Send me reset password instructions"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Change your password"
         new_password: "New password"
@@ -62,6 +64,9 @@ en:
         first_name: "First name"
         last_name: "Last name"
         email: "Email"
+        placeholder_first_name: "John"
+        placeholder_last_name: "Doe"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Edit %{resource_name}"
         email: "Email"
@@ -78,6 +83,7 @@ en:
       new:
         header: "Log in"
         sign_in: "Sign in"
+        placeholder_email: "example@domain.com"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
@@ -86,6 +92,7 @@ en:
         header: "Resend unlock instructions"
         email: "Email"
         resend_unlock_instructions: "Resend unlock instructions"
+        placeholder_email: "example@domain.com"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

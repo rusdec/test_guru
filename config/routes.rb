@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'main#show'
+  root 'main#index'
 
   devise_for :users,
              path: :gurus,
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  get :admin, to: "admin/home#index"
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true do

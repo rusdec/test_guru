@@ -1,4 +1,4 @@
-<%= answer_header(@answer) %>
+<%= page_header(answer_header(@answer)) %>
 <h3>Вопрос: <%= @answer.question.body %></h3>
 
 <%= render 'form', answer: @answer %>

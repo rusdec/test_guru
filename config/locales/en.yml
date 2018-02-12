@@ -35,13 +35,13 @@ en:
   layouts:
     admin:
       title: "Admin Panel"
-    admin_header:
-      administration: "[Administration]" 
-    user_navigation:
+    nav:
       tests: "Tests"
+      administration: "Administration"
       logout: "Logout"
       registration: "Registration"
       sign_in: "Sign in"
+      welcome: "Welcome guru"
 
   tests:
     index:
@@ -53,6 +53,8 @@ en:
       actions: "Actions"
     test:
       start_test: "Start test"
+      test_level: 'Level: %{test_level}'
+      question_count: 'Questions: %{question_count}'
 
   admin:
     tests:
@@ -67,7 +69,7 @@ en:
       new:
         header: "New test"
       edit:
-        header: "Edit test"
+        header: "Edit test \"%{test_title}\""
       show:
         title: "Title"
         category: "Category"
@@ -86,6 +88,19 @@ en:
         delete: "Delete"
         category: "Category"
         level: "Level"
+    home:
+      index:
+        header: "Administration"
+      categories:
+        tests: "Tests" 
+        edit: "Edit"
+        tests_count:
+          one: "Created %{count} test"
+          other: "Created %{count} tests"
+        users: "Users"
+        users_count:
+          one: "Created %{count} user"
+          other: "Created %{count} users"
 
   test_passages:
     form:
@@ -97,6 +112,16 @@ en:
       all_tests: "All tests"
     show:
       header: "Passing test"
+
+  main:
+    index:
+      header: "World of gurumetry"
+      tests: "Tests"
+      statistics: "Statistics" 
+      self_assessment: "Self-assessment"
+      passage_tests: "Pass various tests!"
+      compare_your_results: "Compare your results with the rest!"
+      how_guru_are_you: "Check how guru are you!"
 
   helpers:
     submit:

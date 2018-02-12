@@ -15,6 +15,7 @@ ru:
       new:
         header: "Выслать инструкции по подтверждению"
         resend_confirmation_instructions: "Выслать инструкции по подтверждению"
+        placeholder_email: "example@domain.com"
     failure:
       already_authenticated: "Вы уже вошли в систему."
       inactive: "Ваша учётная запись ещё не активирована."
@@ -38,6 +39,7 @@ ru:
         header: "Забыли пароль?"
         email: "Эл.почта"
         send_me_instruction: "Выслать инструкцию по восстановлению"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Сменить пароль"
         new_password: "Новый пароль"
@@ -62,6 +64,9 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         email: "Эл.почта"
+        placeholder_first_name: "Иван"
+        placeholder_last_name: "Иванов"
+        placeholder_email: "example@domain.com"
       edit:
         header: "Редактировать %{resource_name}"
         email: "Эл.почта"
@@ -78,6 +83,7 @@ ru:
       new:
         header: "Вход"
         sign_in: "Войти"
+        placeholder_email: "example@domain.com"
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       send_paranoid_instructions: "Если ваша учётная запись существует, то в течение нескольких минут вы получите письмо с инструкциями по её разблокировке."
@@ -86,6 +92,7 @@ ru:
         header: "Выслать инструкцию по разблокировки"
         email: "Эл.почта"
         resend_unlock_instructions: "Выслать инструкцию по разблокировки"
+        placeholder_email: "example@domain.com"
   errors:
     messages:
       already_confirmed: "уже подтверждена. Пожалуйста, попробуйте войти в систему"

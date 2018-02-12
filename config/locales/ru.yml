@@ -4,13 +4,13 @@ ru:
   layouts:
     admin:
       title: "Админ панель"
-    admin_header:
-      administration: "[Администрирование]" 
-    user_navigation:
+    nav:
+      registration: "Регистрация"
+      administration: "Администрирование"
       tests: "Тесты"
       logout: "Выход"
-      registration: "Регистрация"
       sign_in: "Войти"
+      welcome_guru: "Добро пожаловать,"
 
   tests:
     index:
@@ -22,6 +22,8 @@ ru:
       actions: "Действия"
     test:
       start_test: "Начать тест"
+      test_level: 'Сложность: %{test_level}'
+      question_count: 'Вопросов: %{question_count}'
 
   admin:
     tests:
@@ -36,7 +38,7 @@ ru:
       new:
         header: "Новый тест"
       edit:
-        header: "Редактировать тест"
+        header: "Редактировать тест \"%{test_title}\""
       show:
         title: "Название"
         category: "Категория"
@@ -54,6 +56,23 @@ ru:
       form:
         select:
           prompt: "Выберите категорию"
+    home:
+      index:
+        header: "Администрирование"
+      categories:
+        tests: "Тесты" 
+        edit: "Редактировать"
+        tests_count:
+          one: "Всего %{count} тест"
+          few: "Всего %{count} теста"
+          many: "Всего %{count} тестов"
+          other: "Всего %{count} тестов"
+        users: "Пользователи"
+        users_count:
+          one: "Всего %{count} пользователь"
+          few: "Всего %{count} пользователя"
+          many: "Всего %{count} пользователей"
+          other: "Всего %{count} пользователей"
 
   test_passages:
     form:
@@ -65,6 +84,16 @@ ru:
       all_tests: "Все тесты"
     show:
       header: "Прохождение теста"
+
+  main:
+    index:
+      header: "Мир гуруметрии"
+      tests: "Тесты"
+      statistics: "Статистика" 
+      self_assessment: "Оценка себя"
+      passage_tests: "Проходи различные тесты!"
+      compare_your_results: "Сравнивай свои результаты с остальными!"
+      how_guru_are_you: "Проверяй, насколько ты гуру!"
 
   helpers:
     submit:

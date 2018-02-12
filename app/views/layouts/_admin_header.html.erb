@@ -1,16 +1,8 @@
 <header>
-  <table class="admin_nav">
-    <tr>
-      <td class="nav_logo">
-        <%= link_to 'TestGuru', root_path %>
-        <span><%= t('.administration') %></span>
-      </td>
-      <td class="nav_action">
-        <%= render 'layouts/user_navigation' %>
-      </td>
-    </tr>
-  </table>
-  <div>
-    <%= flash_messages %>
-  </div>
+  <nav class="navbar">
+    <%= link_to 'TestGuru', root_path, class: "navbar-brand" %>
+    <ul class="nav navbar-nav">
+      <%= render 'layouts/user_navigation' %>
+    </ul>
+  </nav> 
 </header>
