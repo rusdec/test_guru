@@ -1,5 +1,5 @@
 ru:
-  hello: "Привет, мир"
+  question_of_the_test: "Вопрос теста \"%{test_title}\""
 
   layouts:
     admin:

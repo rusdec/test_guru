@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  question_of_the_test: "Question of the test \"%{test_title}\""
 
   layouts:
     admin:
