@@ -23,14 +23,10 @@ class TestPassagesController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
- 
-    flash_options = if result.success?
-      { success: t('.success') }
-    else
-      { alert: t('.failure') }
-    end
-
-    redirect_to @test_passage, flash_options
+  rescue Octokit::Error
+    redirect_to @test_passage, { alert: t('.failure') } 
+  else
+    redirect_to @test_passage, { success: t('.success') }
   end
 
   private

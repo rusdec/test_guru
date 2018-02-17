@@ -3,7 +3,7 @@ class GistQuestionService
   def initialize(question, client: nil)
     @question = question
     @test = question.test
-    @client = client || GithubClient.new
+    @client = client || Octokit::Client.new(access_token: Rails.application.config.github_token)
   end
 
   def call
@@ -18,7 +18,7 @@ class GistQuestionService
       public: true,
       files: {
         'test-guru-question': {
-          content: "#{@question.body}"
+          content: gist_content
         }
       }
     }
