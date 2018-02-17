@@ -19,5 +19,7 @@ module TestGuru
     config.i18n.default_locale = :ru
 
     config.autoload_paths << "#{Rails.root}/lib/clients"
+
+    config.github_token = ENV['GITHUB_TOKEN']
   end
 end
