@@ -26,7 +26,7 @@ class TestPassagesController < ApplicationController
   rescue Octokit::Error
     redirect_to @test_passage, { alert: t('.failure') } 
   else
-    redirect_to @test_passage, { success: t('.success') }
+    redirect_to @test_passage, { success: t('.success', url: result.html_url) }
   end
 
   private

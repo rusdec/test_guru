@@ -114,7 +114,7 @@ en:
       header: "Passing test"
       dificult_answer: "I have problems with the question"
     gist:
-      success: "Question was send"
+      success: "Question was <a target=\"_blank\" href=\"%{url}\">send</a>"
       failure: "Error while question send"
 
   main:
