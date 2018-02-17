@@ -1,6 +1,7 @@
 <h1><%= t('.header') %> "<%= @test_passage.test.title %>"</h1>
 
-<b><%= @test_passage.current_question.body %></b>
+<p><b><%= @test_passage.current_question.body %></b></p>
 <%= render 'form' %>
 
+<p><%= link_to t('.dificult_answer'), gist_test_passage_path(@test_passage), method: :post %></p>
 <%= test_passage_progress(@test_passage) %>

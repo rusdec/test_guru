@@ -112,6 +112,10 @@ en:
       all_tests: "All tests"
     show:
       header: "Passing test"
+      dificult_answer: "I have problems with the question"
+    gist:
+      success: "Question was send"
+      failure: "Error while question send"
 
   main:
     index:
