@@ -26,6 +26,12 @@ ru:
       question_count: 'Вопросов: %{question_count}'
 
   admin:
+    gists:
+      index:
+        gists: "Gist'ы"
+        user: "Пользователь"
+        question: "Вопрос"
+        gist_url: "Ссылка на gist"
     tests:
       index:
         header: "Доступные Тесты"
@@ -61,18 +67,25 @@ ru:
         header: "Администрирование"
       categories:
         tests: "Тесты" 
+        users: "Пользователи"
+        gists: "Gist'ы"
         edit: "Редактировать"
+        show: "Показать"
         tests_count:
           one: "Всего %{count} тест"
           few: "Всего %{count} теста"
           many: "Всего %{count} тестов"
           other: "Всего %{count} тестов"
-        users: "Пользователи"
         users_count:
           one: "Всего %{count} пользователь"
           few: "Всего %{count} пользователя"
           many: "Всего %{count} пользователей"
           other: "Всего %{count} пользователей"
+        gists_count:
+          one: "Всего %{count} gist"
+          few: "Всего %{count} gist'а"
+          many: "Всего %{count} gist'ов"
+          other: "Всего %{count} gist'ов"
 
   test_passages:
     form:

@@ -26,10 +26,20 @@ class TestPassagesController < ApplicationController
   rescue Octokit::Error
     redirect_to @test_passage, { alert: t('.failure') } 
   else
+    register_gist(result, @test_passage)
     redirect_to @test_passage, { success: t('.success', url: result.html_url) }
   end
 
   private
+
+  def register_gist(result, test_passage)
+    gist = Gist.new({
+      user_id: current_user.id,
+      question_id: test_passage.current_question.id,
+      url: result.html_url
+    })
+    gist.save!
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

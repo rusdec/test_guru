@@ -57,6 +57,12 @@ en:
       question_count: 'Questions: %{question_count}'
 
   admin:
+    gists:
+      index:
+        gists: "Gists"
+        user: "User"
+        question: "Question"
+        gist_url: "Link to gist"
     tests:
       index:
         header: "Tricky Tests"
@@ -93,14 +99,19 @@ en:
         header: "Administration"
       categories:
         tests: "Tests" 
+        users: "Users"
+        gists: "Gists"
+        show: "Show"
         edit: "Edit"
         tests_count:
           one: "Created %{count} test"
           other: "Created %{count} tests"
-        users: "Users"
         users_count:
           one: "Created %{count} user"
           other: "Created %{count} users"
+        gists_count:
+          one: "Created %{count} gist"
+          other: "Created %{count} gists"
 
   test_passages:
     form:

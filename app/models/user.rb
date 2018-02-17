@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :role_users, dependent: :destroy
   has_many :roles, through: :role_users
 
+  has_one :gists
+
   validate :validate_email_format
   validates :email, presence: true,
                     uniqueness: true
