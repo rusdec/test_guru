@@ -1,0 +1,14 @@
+<%= page_header(t('.gists')) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('.user') %></th>
+      <th><%= t('.question') %></th>
+      <th><%= t('.gist_url') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>

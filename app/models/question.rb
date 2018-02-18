@@ -3,6 +3,8 @@ class Question < ApplicationRecord
 
   has_many :answers
 
+  has_many :gists
+
   default_scope { order(:level) }
 
   validates :body, presence: true

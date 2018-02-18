@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   end
 
   resources :test_passages, only: %i[show update] do
-    get :result, on: :member
+    member do 
+      get :result
+      post :gist
+    end
   end
 
   get :admin, to: "admin/home#index"
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true
       end
     end
+    resources :gists, only: %[index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
