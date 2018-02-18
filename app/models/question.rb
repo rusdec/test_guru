@@ -3,7 +3,7 @@ class Question < ApplicationRecord
 
   has_many :answers
 
-  has_one :gists
+  has_many :gists
 
   default_scope { order(:level) }
 

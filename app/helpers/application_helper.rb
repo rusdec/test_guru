@@ -1,4 +1,14 @@
 module ApplicationHelper
+
+  FLASH_CLASSES = {
+    alert:    'alert-danger',
+    success:  'alert-success',
+    warning:  'alert-warning',
+    notice:   'alert-info'
+  }.freeze
+
+  FLASH_CLASS_DEFAULT = FLASH_CLASSES[:notice]
+
   def current_year
     DateTime.current.year
   end
@@ -29,17 +39,8 @@ module ApplicationHelper
 
   private
 
-  FLASH_KLASSES = {
-    alert:    'alert-danger',
-    success:  'alert-success',
-    warning:  'alert-warning',
-    notice:   'alert-info'
-  }.freeze
-
-  FLASH_KLASS_DEFAULT = FLASH_KLASSES[:notice]
-
   def flash_class(klass)
-    FLASH_KLASSES[klass] || FLASH_KLASS_DEFAULT
+    FLASH_CLASSES[klass] || FLASH_CLASS_DEFAULT
   end
 
   def flash_content(message)
