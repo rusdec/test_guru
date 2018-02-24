@@ -1,7 +1,11 @@
 <%= page_header(t('.header')) %>
-<table>
+<table class="table">
   <tr>
-    <th><%= t('.category') %></th>
+    <th>
+      <%= t('.category') %>
+      <i class="fas fa-sort-alpha-up"></i>
+      <i class="fas fa-sort-alpha-down"></i>
+    </th>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
     <th><%= t('.quantity_of_questions') %></th>

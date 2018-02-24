@@ -57,6 +57,8 @@ en:
       sort_title_desc: "By Title"
       sort_level_asc: "By Level"
       sort_level_desc: "By Level"
+      sort_popularity_desc: "By Popularity"
+      sort_popularity_asc: "By Popularity"
     test:
       start_test: "Start test"
       test_level: 'Level: %{test_level}'
