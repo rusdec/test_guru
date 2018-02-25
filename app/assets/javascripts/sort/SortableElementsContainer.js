@@ -14,7 +14,12 @@ class SortableElementsContainer {
 
     this._elementsSelector = params.elementsSelector
     this.setParams()
-    this._elements = (params.elements == null) ? new SortableElementsCollection(Array.prototype.slice.call(this.getElements())) : params.elements
+    if (params.elements == null) {
+      var elements = Array.prototype.slice.call(this.getElements())
+    } else {
+      var elements = params.elements
+    }
+    this._elements = new SortableElementsCollection(elements)
   }
 
   setParams() {
