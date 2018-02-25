@@ -30,11 +30,7 @@ class SortButtons {
   listen(evnt = 'click') {
     for(let i = 0; i < this._buttons.length; i++) {
       this._buttons[i].node.addEventListener(evnt, () => {
-        if (this._buttons[i].sortType() === 'asc') {
-          this._container.replace(this._elements.sortByAsc(this._buttons[i].sortBy()))
-        } else {
-          this._container.replace(this._elements.sortByDesc(this._buttons[i].sortBy()))
-        }
+        this._container.replace(this._elements.sort(this._buttons[i].sortBy(), this._buttons[i].sortType()))
         this.replaceButton(this._buttons[i])
       })
     }

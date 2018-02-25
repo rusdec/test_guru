@@ -31,23 +31,20 @@ class SortableElementsCollection {
     return new SortableElement(node)
   }
 
-  sortByDesc(param) {
-    var p = param
+  sort(by, type) {
+    var that = this
     return this.nodes(this._elements.sort(function(x, y) {
-      x = Number.isNaN(Number.parseFloat(x[p])) ? x[p] : Number.parseFloat(x[p])
-      y = Number.isNaN(Number.parseFloat(y[p])) ? y[p] : Number.parseFloat(y[p])
-
-      return (x < y) ? 1 : (x === y) ? 0 : -1;
+      x = that.getValue(x[by])
+      y = that.getValue(y[by])
+      if (type === 'asc') {
+        return (x < y) ? -1 : (x === y) ? 0 : 1;
+      } else {
+        return (x < y) ? 1 : (x === y) ? 0 : -1;
+      }
     }));
   }
 
-  sortByAsc(param) {
-    var p = param
-    return this.nodes(this._elements.sort(function(x, y) {
-      x = Number.isNaN(Number.parseFloat(x[p])) ? x[p] : Number.parseFloat(x[p])
-      y = Number.isNaN(Number.parseFloat(y[p])) ? y[p] : Number.parseFloat(y[p])
-
-      return (x < y) ? -1 : (x === y) ? 0 : 1;
-    }));
+  getValue(element) {
+    return Number.isNaN(Number.parseFloat(element)) ? element : Number.parseFloat(element)
   }
 }
