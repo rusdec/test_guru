@@ -3,27 +3,27 @@
     <%= t('.sort') %>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <button class="dropdown-item" type="button" sort-by="title-asc">
+    <button class="dropdown-item hidden" type="button" sort-by="title" sort-type="asc" sort-button>
       <%= t('.sort_title_asc') %>
       <i class="fas fa-sort-alpha-down"></i>
     </button>
-    <button class="dropdown-item" type="button" sort-by="title-desc">
+    <button class="dropdown-item" type="button" sort-by="title" sort-type="desc" sort-button>
       <%= t('.sort_title_desc') %> 
       <i class="fas fa-sort-alpha-up"></i>
     </button>
-    <button class="dropdown-item" type="button" sort-by="level-asc">
+    <button class="dropdown-item hidden" type="button" sort-by="level" sort-type="asc" sort-button>
       <%= t('.sort_level_asc') %>
       <i class="fas fa-sort-numeric-down"></i>
     </button>
-    <button class="dropdown-item" type="button" sort-by="level-desc">
+    <button class="dropdown-item" type="button" sort-by="level" sort-type="desc" sort-button>
       <%= t('.sort_level_desc') %> 
       <i class="fas fa-sort-numeric-up"></i>
     </button>
-    <button class="dropdown-item" type="button" sort-by="popularity-asc">
+    <button class="dropdown-item hidden" type="button" sort-by="popularity" sort-type="asc" sort-button>
       <%= t('.sort_popularity_asc') %>
       <i class="fas fa-sort-numeric-down"></i>
     </button>
-    <button class="dropdown-item" type="button" sort-by="popularity-desc">
+    <button class="dropdown-item" type="button" sort-by="popularity"  sort-type="desc" sort-button>
       <%= t('.sort_popularity_desc') %> 
       <i class="fas fa-sort-numeric-up"></i>
     </button>

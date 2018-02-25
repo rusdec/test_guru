@@ -5,9 +5,9 @@ class SortableElement {
   }
 
   createAttributes() {
-    let attributes = this._node.querySelectorAll('[sort-property]')
+    let attributes = this._node.querySelectorAll('[sort-by]')
     for (let i = 0; i < attributes.length; i++) {
-      this[attributes[i].getAttribute('sort-property')] = attributes[i].innerText
+      this[attributes[i].getAttribute('sort-by')] = attributes[i].innerText
     }
   }
 

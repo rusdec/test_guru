@@ -3,7 +3,7 @@
   <div class="card">
 
     <div class="card-block">
-      <h4 class="card-title" sort-property="title"><%= test.title %></h4>
+      <h4 class="card-title" sort-by="title"><%= test.title %></h4>
       <span class="text-muted"><small><%= test.category.title %></small></span>
       <p class="card-text">
         <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
@@ -15,7 +15,7 @@
         <div class="mr-auto p-1 text-left">
           <ul class="list-unstyled flex-md-row mb-0">
             <li class="nav-item">
-              <small sort-property="level"><%= t('.test_level', test_level: test.level) %></small>
+              <small sort-by="level"><%= t('.test_level', test_level: test.level) %></small>
             </li>
             <li class="nav-item">
               <small><%= t('.question_count', question_count: test.questions.count) %></small>
@@ -24,7 +24,7 @@
         </div>
         <div class="p-1 align-self-center">
           <span class="align-middle">
-            <i class="fas fa-user"></i> <span sort-property="popularity" sort-property-type="number"><%= test.users.count %></span>
+            <i class="fas fa-user"></i> <span sort-by="popularity"><%= test.users.count %></span>
           </span>
         </div>
       </div>

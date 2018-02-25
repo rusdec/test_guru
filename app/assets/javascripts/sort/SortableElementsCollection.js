@@ -1,6 +1,10 @@
-class SortElementsCollection {
+class SortableElementsCollection {
   constructor(nodes) {
     this._elements = this.toSortableElements(nodes)
+  }
+
+  get elements() {
+    return this._elements
   }
 
   // return array of Nodes
