@@ -2,7 +2,10 @@
 <table class="table table-hover table-bordered small">
   <thead>
   <tr class="text-center">
-    <th><%= t('.category') %></th>
+    <th><%= t('.category') %>
+      <i sort-button sort-by="category" sort-type="asc" class="fas fa-sort-alpha-up" role="button"></i>
+      <i sort-button sort-by="category" sort-type="desc" class="hidden fas fa-sort-alpha-down" role="button"></i>
+    </th>
     <th><%= t('.title') %>
       <i sort-button sort-by="title" sort-type="asc" class="fas fa-sort-alpha-up" role="button"></i>
       <i sort-button sort-by="title" sort-type="desc" class="hidden fas fa-sort-alpha-down" role="button"></i>
@@ -11,7 +14,10 @@
       <i sort-button sort-by="level" sort-type="asc" class="fas fa-sort-numeric-up" role="button"></i>
       <i sort-button sort-by="level" sort-type="desc" class="hidden fas fa-sort-numeric-down" role="button"></i>
     </th>
-    <th><%= t('.quantity_of_questions') %></th>
+    <th><%= t('.quantity_of_questions') %>
+      <i sort-button sort-by="questions-count" sort-type="asc" class="fas fa-sort-numeric-up" role="button"></i>
+      <i sort-button sort-by="questions-count" sort-type="desc" class="hidden fas fa-sort-numeric-down" role="button"></i>
+    </th>
     <th colspan="2"><%= t('.actions') %></th>
   </tr>
   </thead>

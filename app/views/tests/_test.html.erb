@@ -1,12 +1,14 @@
 <div class="col-md-4 text-xs-center" sortable-element>
 
-  <div class="card">
+  <div class="card mb-4 light-card">
 
     <div class="card-block">
-      <h4 class="card-title" sort-by="title"><%= test.title %></h4>
-      <span class="text-muted"><small><%= test.category.title %></small></span>
+      <p class="card-title" sort-by="title">
+        <%= test.title %><br>
+        <span class="text-muted"><small><%= test.category.title %></small></span>
+      </p>
       <p class="card-text">
-        <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
+        <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-outline-primary" %>
       </p>
     </div>
 
