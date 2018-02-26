@@ -20,6 +20,14 @@ ru:
       level: "Уровень"
       quantity_of_questions: "Кол-во вопросов"
       actions: "Действия"
+    sort_panel:
+      sort: "Сортировать"
+      sort_title_asc: "Название"
+      sort_title_desc: "Название"
+      sort_level_asc: "Сложность"
+      sort_level_desc: "Сложность"
+      sort_popularity_desc: "Популярность"
+      sort_popularity_asc: "Популярность"
     test:
       start_test: "Начать тест"
       test_level: 'Сложность: %{test_level}'

@@ -1,4 +1,7 @@
 <%= page_header(t('.header')) %>
-<div class="row">
+<div class="row ml-1 mb-3">
+  <%= render 'sort_panel' %>
+</div>
+<div id="test-cards-container" class="row" sort-type="elements-container">
   <%= render @tests %>
 </div>

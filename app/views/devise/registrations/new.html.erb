@@ -22,10 +22,14 @@
 
       <div class="form-group">
         <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", "aria-describedby": "passwordHelpBlock" %>
+        <p id="passwordHelpBlock" class="form-text text-muted">
         <% if @minimum_password_length %>
         <em><%= t('.minimum_characters', count: @minimum_password_length) %></em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </p>
+        <div class="min-length" value="<%= @minimum_password_length %>">
+        </div>
       </div>
 
       <div class="form-group">
