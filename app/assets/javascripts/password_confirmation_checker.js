@@ -5,16 +5,16 @@ document.addEventListener('turbolinks:load', function() {
     var minLength = getMinLength(passwordField)
 
     passwordField.addEventListener('input', function() {
-      whenPasswordChangeAndConfirmNotEmpty(passwordField, passwordConfirmField)
-      whenPasswordMinLengthRequire(passwordField)
+      checkPasswordChangeAndConfirmNotEmpty(passwordField, passwordConfirmField)
+      checkPasswordMinLengthRequire(passwordField)
     });
 
     passwordConfirmField.addEventListener('input', function() {
-      whenConfirmEqualPasswordRequire(passwordField, passwordConfirmField)
+      checkConfirmEqualPasswordRequire(passwordField, passwordConfirmField)
     })
   }
 
-  function whenConfirmEqualPasswordRequire(passwordField, passwordConfirmField) {
+  function checkConfirmEqualPasswordRequire(passwordField, passwordConfirmField) {
     if(passwordConfirmField.value.length > 0 && passwordConfirmField.value !== passwordField.value) {
       hoverDanger(passwordConfirmField)
     } else if(passwordConfirmField.value.length === 0) {
@@ -24,12 +24,12 @@ document.addEventListener('turbolinks:load', function() {
     }
   }
 
-  function whenPasswordChangeAndConfirmNotEmpty(passwordField, passwordConfirmField) {
+  function checkPasswordChangeAndConfirmNotEmpty(passwordField, passwordConfirmField) {
     if (passwordConfirmField.value.length > 0) {
-      whenConfirmEqualPasswordRequire(passwordField, passwordConfirmField)
+      checkConfirmEqualPasswordRequire(passwordField, passwordConfirmField)
     }
   }
-  function whenPasswordMinLengthRequire(passwordField) {
+  function checkPasswordMinLengthRequire(passwordField) {
     if(passwordField.value.length < minLength && passwordField.value.length > 0) {
       hoverDanger(passwordField)
     } else if (passwordField.value.length >= minLength) {
