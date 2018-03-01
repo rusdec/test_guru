@@ -8,10 +8,11 @@ document.addEventListener('turbolinks:load', function() {
   }
 
   var errors = document.querySelector('.resource-errors')
-  if (errors) {
+  var editInline = document.querySelector('.edit-inline')
+
+  if (errors && editInline) {
     formLinkHandler(errors.dataset.resourceId)
   }
-
 
   function formInlineLinkHandler(event) {
     event.preventDefault();
@@ -21,10 +22,10 @@ document.addEventListener('turbolinks:load', function() {
 
   function formLinkHandler(id) {
     var dataSelector = `[data-test-id="${id}"]`
+    var link = document.querySelector(`.form-inline-link${dataSelector}`)
     var form = document.querySelector(`.form-inline${dataSelector}`)
     var title = document.querySelector(`.test-title${dataSelector}`)
-    var link = document.querySelector(`.form-inline-link${dataSelector}`)
-    
+
     if (form.classList.contains('hidden')) {
       title.classList.add('hidden');
       form.classList.remove('hidden');
