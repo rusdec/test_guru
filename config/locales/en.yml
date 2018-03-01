@@ -43,6 +43,10 @@ en:
       sign_in: "Sign in"
       welcome: "Welcome guru"
 
+  shared:
+    errors:
+      errors: "Errors"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -97,8 +101,11 @@ en:
         all_tests: "All tests"
       form:
         title: "Title"
+      form_inline:
+        submit: "OK"
       test:
         edit: "Edit"
+        edit_inline: "Fast edit"
         delete: "Delete"
         category: "Category"
         level: "Level"

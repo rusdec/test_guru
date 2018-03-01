@@ -12,6 +12,10 @@ ru:
       sign_in: "Войти"
       welcome_guru: "Добро пожаловать,"
 
+  shared:
+    errors:
+      errors: "Ошибки"
+
   tests:
     index:
       header: "Доступные Тесты"
@@ -65,11 +69,14 @@ ru:
       link_to_tests:
         all_tests: "Все тесты"
       test:
-        edit: "Редактировать"
+        edit: "Редакт."
+        edit_inline: "Редакт. быстр."
         delete: "Удалить"
       form:
         select:
           prompt: "Выберите категорию"
+      form_inline:
+        submit: "ОК"
     home:
       index:
         header: "Администрирование"

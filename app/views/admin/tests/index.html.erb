@@ -1,4 +1,5 @@
 <%= page_header(t('.header')) %>
+<%= render 'shared/errors', resource: @test %>
 <table class="table table-hover table-bordered small">
   <thead>
   <tr class="text-center">
@@ -18,7 +19,7 @@
       <i sort-button sort-by="questions-count" sort-type="asc" class="fas fa-sort-numeric-up" role="button"></i>
       <i sort-button sort-by="questions-count" sort-type="desc" class="hidden fas fa-sort-numeric-down" role="button"></i>
     </th>
-    <th colspan="2"><%= t('.actions') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
   </thead>
   <tbody id="test-admin-table-container">

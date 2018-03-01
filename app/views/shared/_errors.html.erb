@@ -1,10 +1,15 @@
-<% if resource.errors.present? %>
-  <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading">Ошибки:</h4>
-    <ul>
-    <% resource.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
+<% if resource.present? && resource.errors.present? %>
+  <%= content_tag :div,
+    class: 'alert alert-danger resource-errors',
+    role: 'alert',
+    data: { resource_id: resource.id } do %>
+
+    <h4 class="alert-heading"><%= t('.errors') %>:</h4>
+      <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+
+  <% end %>
 <% end %>
