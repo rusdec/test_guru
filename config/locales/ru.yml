@@ -26,12 +26,9 @@ ru:
       actions: "Действия"
     sort_panel:
       sort: "Сортировать"
-      sort_title_asc: "Название"
-      sort_title_desc: "Название"
-      sort_level_asc: "Сложность"
-      sort_level_desc: "Сложность"
-      sort_popularity_desc: "Популярность"
-      sort_popularity_asc: "Популярность"
+      sort_by_title: "Название"
+      sort_by_level: "Сложность"
+      sort_by_popularity: "Популярность"
     test:
       start_test: "Начать тест"
       test_level: 'Сложность: %{test_level}'

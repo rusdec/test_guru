@@ -3,17 +3,17 @@
     <small><%= t('.sort') %></small>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <%= sort_buttons(title: t('.sort_title_asc'),
+    <%= sort_buttons(title: t('.sort_by_title'),
                      sort_by: 'title',
                      sort_element_type: 'alpha',
-                     hidden: 'desc') %>
-    <%= sort_buttons(title: t('.sort_level_asc'),
+                     hidden: :desc) %>
+    <%= sort_buttons(title: t('.sort_by_level'),
                      sort_by: 'level',
                      sort_element_type: 'numeric',
-                     hidden: 'desc') %>
-    <%= sort_buttons(title: t('.sort_popularity_asc'),
-                     sort_by: 'level',
+                     hidden: :desc) %>
+    <%= sort_buttons(title: t('.sort_by_popularity'),
+                     sort_by: 'popularity',
                      sort_element_type: 'numeric',
-                     hidden: 'desc') %>
+                     hidden: :desc) %>
   </div>
 </div>

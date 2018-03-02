@@ -45,7 +45,7 @@ module ApplicationHelper
   #   hidden: (asc|desc)
   # }
   # #
-  def sort_icon_buttons(element)
+  def sort_buttons(element)
     buttons = []
     sort_types = [:asc, :desc]
     arrows = { asc: 'up', desc: 'down' }
