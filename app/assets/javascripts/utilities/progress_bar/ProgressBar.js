@@ -3,8 +3,8 @@ class ProgressBar {
     this._container = document.querySelector(params.containerSelector)
     this._total = this._container.dataset.total
     this._current = this._container.dataset.current
-    this._localization = params.localization
     params = this.defaultParams(params)
+    this._localization = params.localization
     this._params = params.params
     this._renderBackground = params.renderBackground
   }
@@ -15,6 +15,7 @@ class ProgressBar {
     let description = this.createDescription(this._params.description)
 
     if (this._renderBackground === true) {
+      console.log(this._params.background)
       let background = this.createBackgroundBar(this._params.background)
       svg.append(background)
     }
@@ -25,8 +26,6 @@ class ProgressBar {
   }
 
   createBackgroundBar(params = {}) {
-    params.width = '100%'
-    params = Object.assign(this._params.bar, params)
     return this.createRect(params)
   }
 
@@ -60,10 +59,6 @@ class ProgressBar {
  
   getText() {
     let text = this._localization.description.text
-    let textPatternsMap = {
-      '/%c%/': this._current,
-      '/%t%/': this._total
-    }
     text = text.replace(/(.*)%.%(.*)%.%(.*)/,`$1${this._current}$2${this._total}$3`)
 
     return text
@@ -106,6 +101,7 @@ class ProgressBar {
     params.localization.description.text = params.localization.description.text || 'Question %c% from %t%'
     params.params.background = params.params.background || {}
     params.params.background.width = params.params.background.width || '100%'
+    params.params.background.height = params.params.background.height || params.params.bar.height
     params.params.svg = params.params.svg || {}
     params.params.svg.width = params.params.svg.width || '100%'
     params.params.svg.height = params.params.svg.height || params.params.bar.height
