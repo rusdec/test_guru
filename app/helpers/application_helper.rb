@@ -47,8 +47,8 @@ module ApplicationHelper
   # #
   def sort_icon_buttons(element)
     buttons = []
-    sort_types = ['asc', 'desc']
-    arrows = { 'asc': 'up', 'desc': 'down' }
+    sort_types = [:asc, :desc]
+    arrows = { asc: 'up', desc: 'down' }
 
     sort_types.each do |sort_type|
       css_class = "dropdown-item small #{sort_type == element[:hidden] ? 'hidden' : ''}"
@@ -57,7 +57,7 @@ module ApplicationHelper
                             'sort-by': element[:sort_by],
                             'sort-button': '',
                             'sort-type': sort_type) do
-                              css_class = "fas fa-sort-#{element[:sort_element_type]}-#{arrows[sort_type.to_sym]}"
+                              css_class = "fas fa-sort-#{element[:sort_element_type]}-#{arrows[sort_type]}"
                               [ element[:title],
                                 tag.i(class: css_class) ].join(' ').html_safe
                             end

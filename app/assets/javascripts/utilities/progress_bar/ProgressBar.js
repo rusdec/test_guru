@@ -15,7 +15,6 @@ class ProgressBar {
     let description = this.createDescription(this._params.description)
 
     if (this._renderBackground === true) {
-      console.log(this._params.background)
       let background = this.createBackgroundBar(this._params.background)
       svg.append(background)
     }
