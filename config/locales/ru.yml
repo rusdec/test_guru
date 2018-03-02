@@ -12,6 +12,10 @@ ru:
       sign_in: "Войти"
       welcome_guru: "Добро пожаловать,"
 
+  shared:
+    errors:
+      errors: "Ошибки"
+
   tests:
     index:
       header: "Доступные Тесты"
@@ -22,12 +26,9 @@ ru:
       actions: "Действия"
     sort_panel:
       sort: "Сортировать"
-      sort_title_asc: "Название"
-      sort_title_desc: "Название"
-      sort_level_asc: "Сложность"
-      sort_level_desc: "Сложность"
-      sort_popularity_desc: "Популярность"
-      sort_popularity_asc: "Популярность"
+      sort_by_title: "Название"
+      sort_by_level: "Сложность"
+      sort_by_popularity: "Популярность"
     test:
       start_test: "Начать тест"
       test_level: 'Сложность: %{test_level}'
@@ -65,11 +66,14 @@ ru:
       link_to_tests:
         all_tests: "Все тесты"
       test:
-        edit: "Редактировать"
+        edit: "Редакт."
+        edit_inline: "Редакт. быстр."
         delete: "Удалить"
       form:
         select:
           prompt: "Выберите категорию"
+      form_inline:
+        submit: "ОК"
     home:
       index:
         header: "Администрирование"

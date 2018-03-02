@@ -1,9 +1,9 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :set_test, only: %i[show update edit start destroy]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[show update edit start destroy update_inline]
 
   def index
-    @tests = Test.all.order(:category_id, :title, :level)
   end
 
   def new
@@ -18,6 +18,14 @@ class Admin::TestsController < Admin::BaseController
       redirect_to [:admin, @test]
     else
       render :new
+    end
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
     end
   end
 
@@ -44,9 +52,13 @@ class Admin::TestsController < Admin::BaseController
   end
 
   private
-  
+
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def set_tests  
+    @tests = Test.all.order(:category_id, :title, :level)
   end
 
   def set_test

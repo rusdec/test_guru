@@ -43,6 +43,10 @@ en:
       sign_in: "Sign in"
       welcome: "Welcome guru"
 
+  shared:
+    errors:
+      errors: "Errors"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -53,12 +57,9 @@ en:
       actions: "Actions"
     sort_panel:
       sort: "Sort"
-      sort_title_asc: "By Title"
-      sort_title_desc: "By Title"
-      sort_level_asc: "By Level"
-      sort_level_desc: "By Level"
-      sort_popularity_desc: "By Popularity"
-      sort_popularity_asc: "By Popularity"
+      sort_by_title: "By Title"
+      sort_by_level: "By Level"
+      sort_by_popularity: "By Popularity"
     test:
       start_test: "Start test"
       test_level: 'Level: %{test_level}'
@@ -97,8 +98,11 @@ en:
         all_tests: "All tests"
       form:
         title: "Title"
+      form_inline:
+        submit: "OK"
       test:
         edit: "Edit"
+        edit_inline: "Fast edit"
         delete: "Delete"
         category: "Category"
         level: "Level"

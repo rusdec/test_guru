@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
     ((correct_questions.to_f / questions_total) * 100).floor
   end
 
+  def current_question_index
+    questions_ordered_by_id.index(current_question)
+  end
+
   private
 
   def before_validation_set_next_question
@@ -49,9 +53,13 @@ class TestPassage < ApplicationRecord
 
   def next_question
     if current_question.nil?
-      test.questions.order(:id).first
+      questions_ordered_by_id.first
     else
-      test.questions.order(:id).where('id > ?', current_question.id).first
+      questions_ordered_by_id.where('id > ?', current_question.id).first
     end
+  end
+
+  def questions_ordered_by_id
+    test.questions.order(:id)
   end
 end

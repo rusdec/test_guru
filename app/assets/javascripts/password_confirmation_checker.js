@@ -50,25 +50,29 @@ document.addEventListener('turbolinks:load', function() {
     }
   }
 
-  function hoverClear(field) {
+  function hovering(field, classes = { fieldParentClasses: [], fieldClasses: [] }) {
     field.parentNode.classList = []
-    addClasses(field.parentNode, ['form-group'])
+    addClasses(field.parentNode, ['form-group'].concat(classes.fieldParentClasses))
     field.classList = []
-    addClasses(field, ['form-control'])
+    addClasses(field, ['form-control'].concat(classes.fieldClasses))
+  }
+
+  function hoverClear(field) {
+    hovering(field)
   }
 
   function hoverDanger(field) {
-    field.parentNode.classList = []
-    addClasses(field.parentNode, ['form-group', 'has-danger'])
-    field.classList = []
-    addClasses(field, ['form-control', 'form-control-danger'])
+    hovering(field, {
+      fieldParentClasses: ['has-danger'],
+      fieldClasses: ['form-control-danger']
+    })
   }
 
   function hoverSuccess(field) {
-    field.parentNode.classList = []
-    addClasses(field.parentNode, ['form-group', 'has-success'])
-    field.classList = []
-    addClasses(field, ['form-control', 'form-control-success'])
+    hovering(field, {
+      fieldParentClasses: ['has-success'],
+      fieldClasses: ['form-control-success']
+    })
   }
 
 });

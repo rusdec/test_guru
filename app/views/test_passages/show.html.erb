@@ -1,7 +1,11 @@
-<h1><%= t('.header') %> "<%= @test_passage.test.title %>"</h1>
+<%= page_header("#{t('.header')} \"#{@test_passage.test.title}\"") %>
 
 <p><b><%= @test_passage.current_question.body %></b></p>
 <%= render 'form' %>
 
 <p><%= link_to t('.dificult_answer'), gist_test_passage_path(@test_passage), method: :post %></p>
-<%= test_passage_progress(@test_passage) %>
+<%= content_tag :div, id: "test-passage-progress-bar-container", class: "d-flex justify-content-start" do %>
+  <%= content_tag :div,
+    class: "bar pull-md-left flex-mb-row",
+    data: { total: @test_passage.questions_total, current: @test_passage.current_question_index + 1 } do %><% end %>
+<% end %>
