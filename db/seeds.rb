@@ -62,37 +62,18 @@ data_was_created(Role)
 
 User.create!([
 {
-  first_name: 'Alexey',
-  last_name:  'Mekhonoshin',
-  email: 'alexey.mekhonoshin@mail.org',
-  password_digest: 'qwerty',
-},
-{
-  first_name: 'Svetlana',
-  last_name:  'Ivanova',
-  email: 'svetlana.ivanova@mail.org',
-  password_digest: 'svetkalove',
-},
-{
-  first_name: 'Aleksandr',
-  last_name: 'Titiov',
-  email: 'aleksandr.titov@mail.org',
-  password_digest: 'admin'
+  first_name: 'Aleksey',
+  last_name: 'Mekhonoshin',
+  email: 'aleksey.mekhonoshin@mail.org',
+  type: 'Admin',
+  password: 'qwerty'
 }
 ])
 data_was_created(User)
 
 RoleUser.create!([
   {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    role_id: id(Role, { name: 'Пользователь' })
-  },
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    role_id: id(Role, { name: 'Пользователь' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     role_id: id(Role, { name: 'Администратор' })
   },
 ])
@@ -101,17 +82,11 @@ data_was_created(RoleUser)
 Category.create!([
   { title: 'Основы веб-разработки' },
   { title: 'Биология' },
-  { title: 'Ruby' }
 ])
 data_was_created(Category)
 
 
 Test.create!([
-  {
-    title: 'Основы CSS',
-    level: 0,
-    category_id: id(Category, { title: 'Основы веб-разработки' }),
-  },
   {
     title: 'Основы HTML',
     level: 0,
@@ -122,91 +97,35 @@ Test.create!([
     level: 0,
     category_id: id(Category, { title: 'Биология' }),
   },
-  {
-    title: 'Фауна для самых маленьких',
-    level: 0,
-    category_id: id(Category, { title: 'Биология' }),
-  },
-  {
-    title: 'Фауна Байкала',
-    level: 3,
-    category_id: id(Category, { title: 'Биология' }),
-  },
-  {
-    title: 'Модели и ассоциации в Ruby on Rails',
-    level: 2,
-    category_id: id(Category, { title: 'Ruby' }),
-  },
-  {
-    title: 'Контроллеры в Ruby on Rails',
-    level: 1,
-    category_id: id(Category, { title: 'Ruby' }),
-  },
 ])
 data_was_created(Test)
 
 TestAuthor.create!([
   {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
-    test_id: id(Test, { title: 'Фауна Байкала' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
-    test_id: id(Test, { title: 'Фауна для самых маленьких' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
   {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     test_id: id(Test, { title: 'Основы HTML' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
-    test_id: id(Test, { title: 'Основы CSS' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
-  },
-  {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
   },
 ])
 data_was_created(TestAuthor)
 
 Question.create!([
-  # Вопросы для "Основы CSS"
-  {
-    body: 'Задайте цвет тексту: <span>Я - Текст</span>',
-    level: 1,
-    test_id: id(Test, { title: 'Основы CSS' })
-  },
-  {
-    body: 'Отцентруйте текст по вертикали: <table><td>Текст1</td><td>Текст<br>2</td></table>',
-    level: 2,
-    test_id: id(Test, { title: 'Основы CSS' })
-  },
-  {
-    body: 'В чём разница между class и id?',
-    level: 1,
-    test_id: id(Test, { title: 'Основы CSS' })
-  },
   # Вопросы для "Основы HTML"
   {
-    body: 'Создайте POST-форму для ввода пароля и эл.почты.',
-    level: 2,
+    body: 'Выберите правильный способ установки кодировки в html',
+    level: 0,
     test_id: id(Test, { title: 'Основы HTML' })
   },
   {
-    body: 'Что означают теги HTML, HEAD, BODY?',
+    body: 'Выберите правильный способ подлючения css-стиля',
     level: 1,
     test_id: id(Test, { title: 'Основы HTML' })
   },
   {
-    body: 'Зачем нужен тег <q>?',
+    body: 'Выберите блочные теги',
     level: 1,
     test_id: id(Test, { title: 'Основы HTML' })
   },
@@ -216,92 +135,165 @@ Question.create!([
     level: 1,
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
-  # Вопросы для "Фауна для самых маленьких"
   {
-    body: 'Выберите предcтавителя фауны: гвоздика, собака',
+    body: 'Выберите существующие методы анализы флоры из представленных',
     level: 1,
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
-  # Вопросы для "Фауна Байкала"
   {
-    body: 'Кто не является представителем подводного мира оз.Байкал: нерпа, нарвал, осётр',
+    body: 'Выберите верное название для флоры водорослей',
     level: 1,
-    test_id: id(Test, { title: 'Фауна Байкала' })
+    test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
-  {
-    body: 'Перечислите минимум три вида птиц, живущих территории Байкала',
-    level: 1,
-    test_id: id(Test, { title: 'Фауна Байкала' })
-  },
-  # Вопросы для "Модели и ассоциации в Ruby on Rails"
-  {
-    body: 'Опишите разницу между ассоциациями has_many и has_one',
-    level: 1,
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
-  },
-  {
-    body: 'Составьте классы для сущностей: user, book. Отношение между сущностями - многие-ко-многим.',
-    level: 2,
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' })
-  },
-  # Вопросы для "Контроллеры в Ruby on Rails"
-  {
-    body: 'Опишите соглашение об именовании контроллеров',
-    level: 1,
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
-  },
-  {
-    body: 'Зачем нужны strong-параметры?',
-    level: 1,
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' })
-  }
 ])
 data_was_created(Question)
 
 Answer.create!([
   {
-    body: 'Соглашение по именованию контроллеров в Rails устанавливает предпочтение множественного числа в последнем слове имени контроллера, хотя строго это не требуется (например, ApplicationController). К примеру, ClientsController более предпочтителен, чем ClientController, SiteAdminsController более предпочтителен, чем SiteAdminController или SitesAdminsController, и так далее.',
-    question_id: id(Question, { body: 'Опишите соглашение об именовании контроллеров' }),
-    correct: true,
-  },
-  {
-    body: 'С помощью сильных параметров (strong parameters) параметры Action Controller запрещены к использованию в массовых назначениях Active Model до тех пор, пока они не добавлены в белый список. Это лучший способ предотвратить случайную уязвимость, позволяющую пользователям обновлять конфиденциальные атрибуты модели. Кроме того, параметры могут быть помечены как обязательные и будут проходить через предопределенные raise/rescue, что приведет к 400 Bad Request, если не будут переданы все обязательные параметры.',
-    question_id: id(Question, { body: 'Зачем нужны strong-параметры?' }),
+    body: '<meta charset="utf-8">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ установки кодировки в html' }),
     correct: true
   },
   {
-    body: 'нарвал',
-    question_id: id(Question, { body: 'Кто не является представителем подводного мира оз.Байкал: нерпа, нарвал, осётр' }),
-    correct: true,
+    body: '<charset "utf-8">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ установки кодировки в html' }),
+    correct: false
   },
   {
-    body: 'span { colortext: red }',
-    question_id: id(Question, { body: 'Задайте цвет тексту: <span>Я - Текст</span>' }),
-    correct: false,
+    body: '<charset "utf-8"></charset>',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ установки кодировки в html' }),
+    correct: false
+  },
+  {
+    body: '<html charset="utf-8">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ установки кодировки в html' }),
+    correct: false
+  },
+  {
+    body: '<css rel="stylesheet" href="style.css">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ подлючения css-стиля' }),
+    correct: false
+  },
+  {
+    body: '<css rel="stylesheet" src="style.css">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ подлючения css-стиля' }),
+    correct: false
+  },
+  {
+    body: '<link rel="stylesheet" type="text/css" href="style.css">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ подлючения css-стиля' }),
+    correct: true
+  },
+  {
+    body: '<style href="style.css">',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите правильный способ подлючения css-стиля' }),
+    correct: false
+  },
+  {
+    body: '<div></div>',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите блочные теги' }),
+    correct: true
+  },
+  {
+    body: '<span></span>',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите блочные теги' }),
+    correct: false
+  },
+  {
+    body: '<p></p>',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите блочные теги' }),
+    correct: true
+  },
+  {
+    body: '<a></a>',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите блочные теги' }),
+    correct: false
+  },
+  {
+    body: 'Человека',
+    sort: 0,
+    question_id: id(Question, { body: 'Что изучает флора?' }),
+    correct: false
+  },
+  {
+    body: 'Животных',
+    sort: 0,
+    question_id: id(Question, { body: 'Что изучает флора?' }),
+    correct: false
+  },
+  {
+    body: 'Насекомых',
+    sort: 0,
+    question_id: id(Question, { body: 'Что изучает флора?' }),
+    correct: false
+  },
+  {
+    body: 'Растения',
+    sort: 0,
+    question_id: id(Question, { body: 'Что изучает флора?' }),
+    correct: true
+  },
+  {
+    body: 'Географический анализ',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите существующие методы анализы флоры из представленных' }),
+    correct: true
+  },
+  {
+    body: 'Возрастной анализ',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите существующие методы анализы флоры из представленных' }),
+    correct: true
+  },
+  {
+    body: 'Цветовой анализ',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите существующие методы анализы флоры из представленных' }),
+    correct: false
+  },
+  {
+    body: 'Пробно порядковый анализ',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите существующие методы анализы флоры из представленных' }),
+    correct: false
+  },
+  {
+    body: 'Бриофлора',
+    sort: 0,
+    question_id: id(Question, { body: 'Выберите верное название для флоры водорослей' }),
+    correct: false
+  },
+  {
+    body: 'Альгофлора',
+    sort: 1,
+    question_id: id(Question, { body: 'Выберите верное название для флоры водорослей' }),
+    correct: true
+  },
+  {
+    body: 'Лихенофлора',
+    sort: 2,
+    question_id: id(Question, { body: 'Выберите верное название для флоры водорослей' }),
+    correct: false
+  },
+  {
+    body: 'Арборифлора',
+    sort: 3,
+    question_id: id(Question, { body: 'Выберите верное название для флоры водорослей' }),
+    correct: false
   }
 ])
 data_was_created(Answer)
-
-TestPassage.create!([
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Модели и ассоциации в Ruby on Rails' }),
-  },
-  {
-    user_id: id(User, { email: 'alexey.mekhonoshin@mail.org' }),
-    test_id: id(Test, { title: 'Контроллеры в Ruby on Rails' }),
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы CSS' }),
-  },
-  {
-    user_id: id(User, { email: 'svetlana.ivanova@mail.org' }),
-    test_id: id(Test, { title: 'Основы HTML' }),
-  },
-])
-data_was_created(TestPassage)
-
-
 
 puts "\nТестовые данные созданы"
