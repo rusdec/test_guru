@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217114943) do
+ActiveRecord::Schema.define(version: 20180305090355) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180217114943) do
     t.datetime "updated_at", null: false
     t.boolean "correct", default: false
     t.integer "sort", default: 0
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["sort"], name: "index_answers_on_sort"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -44,11 +46,14 @@ ActiveRecord::Schema.define(version: 20180217114943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "sort", default: 0
+    t.index ["level"], name: "index_questions_on_level"
   end
 
   create_table "role_users", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "role_id", null: false
+    t.index ["role_id"], name: "index_role_users_on_role_id"
+    t.index ["user_id"], name: "index_role_users_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -69,6 +74,8 @@ ActiveRecord::Schema.define(version: 20180217114943) do
   create_table "test_authors", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
+    t.index ["test_id"], name: "index_test_authors_on_test_id"
+    t.index ["user_id"], name: "index_test_authors_on_user_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -79,6 +86,8 @@ ActiveRecord::Schema.define(version: 20180217114943) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
+    t.index ["test_id"], name: "index_test_passages_on_test_id"
+    t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -87,7 +96,9 @@ ActiveRecord::Schema.define(version: 20180217114943) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
+    t.index ["level"], name: "index_tests_on_level"
   end
 
   create_table "users", force: :cascade do |t|
