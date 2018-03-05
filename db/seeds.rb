@@ -73,7 +73,7 @@ data_was_created(User)
 
 RoleUser.create!([
   {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     role_id: id(Role, { name: 'Администратор' })
   },
 ])
@@ -102,11 +102,11 @@ data_was_created(Test)
 
 TestAuthor.create!([
   {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     test_id: id(Test, { title: 'Флора для самых маленьких' })
   },
   {
-    user_id: id(User, { email: 'aleksandr.titov@mail.org' }),
+    user_id: id(User, { email: 'aleksey.mekhonoshin@mail.org' }),
     test_id: id(Test, { title: 'Основы HTML' })
   },
 ])
