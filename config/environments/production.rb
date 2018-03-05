@@ -64,8 +64,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'limitless-brushlands-64477.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: '',
-    port: '',
+    address: 'smtp.gmail.com',
+    port: '587',
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
     authentication: 'plain',
@@ -97,4 +97,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # Default url options
+  config.action_controller.default_url_options = {}
 end

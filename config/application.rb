@@ -19,6 +19,6 @@ module TestGuru
     config.i18n.default_locale = :ru
 
     # https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
   end
 end

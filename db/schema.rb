@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180305090355) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,8 +33,8 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
+    t.bigint "user_id"
+    t.bigint "question_id"
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.integer "level", default: 0
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
@@ -127,4 +130,6 @@ ActiveRecord::Schema.define(version: 20180305090355) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
 end
