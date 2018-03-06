@@ -40,12 +40,26 @@ en:
       administration: "Administration"
       logout: "Logout"
       registration: "Registration"
+      contact_us: "Contact us"
       sign_in: "Sign in"
       welcome: "Welcome guru"
 
   shared:
     errors:
       errors: "Errors"
+
+  contact:
+    index:
+      header: 'Contact us'
+      message: 'Message'
+      send: 'Send'
+      email: 'Your contact email'
+    send_message:
+      send_success: 'Message was successfully sent'
+      send_failure: 'Sorry, there was an error while sending the message. Please, try again later>'
+      empty_email: 'Not specified'
+      empty_message: 'Message can not be empty'
+      invalid_email: 'Correctly specify e-mail or leave blank'
 
   tests:
     index:

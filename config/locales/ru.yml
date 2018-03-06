@@ -9,12 +9,26 @@ ru:
       administration: "Администрирование"
       tests: "Тесты"
       logout: "Выход"
+      contact_us: "Контакты"
       sign_in: "Войти"
       welcome_guru: "Добро пожаловать,"
 
   shared:
     errors:
       errors: "Ошибки"
+
+  contact:
+    index:
+      header: 'Контакты'
+      message: 'Напишите нам'
+      send: 'Отправить'
+      email: 'Эл.почта для связи'
+    send_message:
+      send_success: 'Сообщение успешно отправлено'
+      send_failure: 'К сожалению возникла ошибка при отправке сообщения. Пожалуйста, попробуйте отправить позже.'
+      empty_email: 'Не указан'
+      empty_message: 'Сообщение не может быть пустым'
+      invalid_email: 'Правильно укажите эл.почту или оставьте пустым'
 
   tests:
     index:
