@@ -19,6 +19,6 @@ module TestGuru
     config.i18n.default_locale = :ru
 
     # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
-    config.serve_static_assets = true
+    config.serve_static_assets = false
   end
 end
