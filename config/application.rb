@@ -18,7 +18,7 @@ module TestGuru
     config.time_zome = "Moscow"
     config.i18n.default_locale = :ru
 
-    # https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
-    # config.assets.initialize_on_precompile = false
+    # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
+    config.serve_static_assets = true
   end
 end
