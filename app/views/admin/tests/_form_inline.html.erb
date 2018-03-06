@@ -1,6 +1,6 @@
 <%= form_with model: [:admin, test], url: update_inline_admin_test_path(test), method: :patch, local: true, class: 'form-inline hidden', data: { test_id: test.id } do |this_test| %>
     <div class="form-group-sm">
       <%= this_test.text_field :title, id: :test_title, class: "form-control form-control-sm" %>
-      <%= this_test.submit t('.submit'), class: "btn btn-primary ml-1 btn-sm" %>
+      <%= this_test.submit t('.submit'), class: "btn light-button ml-1 btn-sm" %>
     </div>
 <% end %>

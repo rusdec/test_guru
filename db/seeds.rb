@@ -49,7 +49,7 @@ Setting.create!([
   {
     name: 'min_answers',
     setting: 'min_answers',
-    value: '1'
+    value: '0'
   }
 ])
 data_was_created(Setting)

@@ -1,18 +1,23 @@
-<%= form_with model: [:admin, @test], local: true do |test| %>
-  <%= render 'shared/errors', resource: @test %>
-  <div>
-    <%= test.label :title %><br>
-    <%= test.text_area :title, id: :test_title, size: '30x3' %>
-  </div>
-  <div>
-    <%= test.label :level %><br>
-    <%= test.number_field :level, id: :test_level, in: 0..100 %>
-  </div>
-  <div>
-    <%= test.label :category_id %><br>
-    <%= test.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </div>
-  <div>
-    <%= test.submit %>
-  </div>
-<% end %>
+<div class="col-md-6">
+  <%= form_with model: [:admin, @test], local: true do |test| %>
+    <%= render 'shared/errors', resource: @test %>
+    <div class="form-group">
+      <%= test.label :title, class: "small" %><br>
+      <%= test.text_area :title, id: :test_title, rows: '6',  class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= test.label :level, class: "small" %><br>
+      <%= test.number_field :level, id: :test_level, in: 0..100, class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= test.label :category_id, class: "small" %><br>
+      <%= test.collection_select :category_id, Category.all, :id, :title, { prompt: true }, { class: "form-control form-control-sm" } %>
+    </div>
+    <div class="form-group text-center mt-5">
+      <%= test.submit class: "btn light-button" %>
+    </div>
+    <div class="form-group text-center">
+      <%= link_to t('.back'), admin_tests_path, class: "small" %>
+    </div>
+  <% end %>
+</div>

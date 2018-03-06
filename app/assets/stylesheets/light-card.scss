@@ -1,16 +1,6 @@
 div.light-card {
   box-shadow: 0px 0px 10px 2px lightgray;
   border: none;
-  input.btn-outline-primary {
-    border-color: #3bc9db;
-    background-color: white;
-    color: #3bc9db;
-    &:hover {
-      color: white;
-      background-color: #3bc9db;
-      border-color: #3bc9db;
-    }
-  }
   div.card-footer {
     background-color: white;
   }

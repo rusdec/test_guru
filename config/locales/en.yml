@@ -86,6 +86,43 @@ en:
         user: "User"
         question: "Question"
         gist_url: "Link to gist"
+    questions:
+      show:
+        question: 'Question'
+        answer: 'Answer'
+        is_correct: 'Correct?'
+        sort: 'Sort'
+        new_answer: 'New answer'
+        back: 'Back'
+        max_answers: 'Max answers'
+        actions: 'Actions'
+        test: 'Test'
+        level: 'Level'
+      form:
+        question: 'Question'
+        level: 'Level'
+        back: 'Back'
+      edit:
+        edit_question: 'Edit question to the test'
+      new:
+        new_question: 'New question'
+    answers:
+      show:
+        answer: 'Answer'
+        question: 'Question'
+        level: 'Level'
+        sort: 'Sort'
+        edit: 'Edit'
+        back: 'Back'
+      form:
+        answer: 'Answer'
+        is_correct: 'Correct?'
+        sort: 'Sort'
+        back: 'Back'
+      edit:
+        edit_answer: 'Edit answer'
+      new:
+        new_answer: 'New answer to the question'
     tests:
       index:
         header: "Tricky Tests"
@@ -108,6 +145,7 @@ en:
         question: "Questions"
         quantity_of_answers: "Quantity of answers"
         new_question: "New question"
+        test: 'Test'
       link_to_tests:
         all_tests: "All tests"
       form:

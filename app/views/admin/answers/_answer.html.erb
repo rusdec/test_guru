@@ -1,8 +1,7 @@
 <tr>
-  <td><%= answer.body %></td>
+  <td><%= link_to answer.body, admin_answer_path(answer) %></td>
   <td style="text-align: center"><%= answer.correct %></td>
   <td style="text-align: center"><%= answer.sort %></td>
-  <td><%= link_to 'Просмотр', admin_answer_path(answer) %></td>
-  <td><%= link_to 'Редактировать', edit_admin_answer_path(answer) %></td>
-  <td><%= link_to 'Удалить', admin_answer_path(answer), method: :delete %></td>
+  <td class="text-center"><%= link_to 'Редактировать', edit_admin_answer_path(answer) %></td>
+  <td class="text-center"><%= link_to 'Удалить', admin_answer_path(answer), method: :delete %></td>
 </tr>

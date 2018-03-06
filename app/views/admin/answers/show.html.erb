@@ -1,9 +1,25 @@
-<h3>Связанный ответ: <%= @answer.question.body %></h3>
-<h3>Ответ верный: <%= @answer.correct %></h3>
-<h3>Сортировка: <%= @answer.sort %></h3>
-<h3>Ответ:</h3>
-<%= @answer.body %>
-<p>
-<%= link_to 'Редактировать', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Вопрос', admin_question_path(@answer.question) %>
-</p>
+<%= page_header(t('.answer')) %>
+<div class="row">
+  <div class="col-md-12 text-center mb-5">
+    <%= tag.h5 @answer.body, class: "text-muted" %>
+  </div>
+  <div class="col-md-6 right">
+    <ul class="list-group border-0">
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.question') %>:</b> <%= @answer.question.body %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.level') %>:</b> <%= t(@answer.correct) %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.sort') %>:</b> <%= @answer.sort %>
+      </li>
+    </ul>
+  </div>
+</div>
+<div>
+  <%= link_to t('.edit'), edit_admin_answer_path(@answer), class: "btn light-button mb-2" %>
+</div>
+<div>
+  <%= link_to t('.back'), admin_question_path(@answer.question), class: "small" %>
+</div>
