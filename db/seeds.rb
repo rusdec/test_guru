@@ -65,6 +65,7 @@ Admin.create!([
   first_name: 'Алексей',
   last_name: 'Мехоношин',
   email: 'ruskidecko@gmail.com',
+  email_contactable: true,
   password: 'qwerty'
 }
 ])
