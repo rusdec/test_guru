@@ -55,8 +55,7 @@ ActiveRecord::Schema.define(version: 20180306072000) do
   create_table "role_users", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "role_id", null: false
-    t.index ["role_id"], name: "index_role_users_on_role_id"
-    t.index ["user_id"], name: "index_role_users_on_user_id"
+    t.index ["role_id", "user_id"], name: "index_role_users_on_role_id_and_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -77,8 +76,7 @@ ActiveRecord::Schema.define(version: 20180306072000) do
   create_table "test_authors", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.index ["test_id"], name: "index_test_authors_on_test_id"
-    t.index ["user_id"], name: "index_test_authors_on_user_id"
+    t.index ["test_id", "user_id"], name: "index_test_authors_on_test_id_and_user_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -89,8 +87,7 @@ ActiveRecord::Schema.define(version: 20180306072000) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
-    t.index ["test_id"], name: "index_test_passages_on_test_id"
-    t.index ["user_id"], name: "index_test_passages_on_user_id"
+    t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
   end
 
   create_table "tests", force: :cascade do |t|

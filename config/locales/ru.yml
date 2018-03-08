@@ -89,7 +89,7 @@ ru:
         sort: 'Сортировка'
         back: 'Назад'
       edit:
-        edit_answer: 'Редактировать вопрос'
+        edit_answer: 'Редактировать ответ на вопрос'
       new:
         new_answer: 'Новый ответ на вопрос'
     tests:
@@ -124,6 +124,7 @@ ru:
       form:
         select:
           prompt: "Выберите категорию"
+        back: "Назад"
       form_inline:
         submit: "ОК"
     home:

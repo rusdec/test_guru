@@ -120,7 +120,7 @@ en:
         sort: 'Sort'
         back: 'Back'
       edit:
-        edit_answer: 'Edit answer'
+        edit_answer: 'Edit answer to question'
       new:
         new_answer: 'New answer to the question'
     tests:
@@ -142,7 +142,7 @@ en:
         level: "Level"
         authors: "Authors"
         questions: "Questions"
-        question: "Questions"
+        question: "Question"
         quantity_of_answers: "Quantity of answers"
         new_question: "New question"
         test: 'Test'
@@ -150,6 +150,7 @@ en:
         all_tests: "All tests"
       form:
         title: "Title"
+        back: "Back"
       form_inline:
         submit: "OK"
       test:
