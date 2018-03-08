@@ -1,6 +1,8 @@
 <%= page_header(t('.header')) %>
 <%= render 'shared/errors', resource: @test %>
 
+<div class="row">
+<div class="col-md-12">
 <table class="table table-hover table-bordered small edit-inline">
   <thead>
   <tr class="text-center">
@@ -35,5 +37,6 @@
   <%= render @tests %>
   </tbody>
 </table>
-<br>
-<%= link_to  t('.new_test'), new_admin_test_path %>
+<%= link_to  t('.new_test'), new_admin_test_path, class: "btn light-button" %>
+</div>
+</div>

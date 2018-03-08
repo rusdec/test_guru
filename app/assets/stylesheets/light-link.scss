@@ -1,0 +1,9 @@
+a {
+  color: $cyan6;
+  &:hover {
+    color: $cyan4;
+  }
+  &:active {
+    color: $cyan6;
+  }
+}

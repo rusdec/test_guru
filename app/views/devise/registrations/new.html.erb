@@ -7,23 +7,23 @@
 
       <div class="form-group">
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, autofocus: true, autocomplete: t('.first_name'), class: "form-control", placeholder: t('.placeholder_first_name') %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: t('.first_name'), class: "form-control form-control-sm", placeholder: t('.placeholder_first_name') %>
       </div>
 
       <div class="form-group">
         <%= f.label :last_name %>
-        <%= f.text_field :last_name, autofocus: true, autocomplete: t('.last_name'), class: "form-control", placeholder: t('.placeholder_last_name') %>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: t('.last_name'), class: "form-control form-control-sm", placeholder: t('.placeholder_last_name') %>
       </div>
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: t('.email'), class: "form-control", placeholder: t('.placeholder_email') %>
+        <%= f.email_field :email, autofocus: true, autocomplete: t('.email'), class: "form-control form-control-sm", placeholder: t('.placeholder_email') %>
       </div>
 
       <div class="form-group">
         <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", "aria-describedby": "passwordHelpBlock" %>
-        <p id="passwordHelpBlock" class="form-text text-muted">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-sm", "aria-describedby": "passwordHelpBlock" %>
+        <p id="passwordHelpBlock" class="form-text text-muted small">
         <% if @minimum_password_length %>
         <em><%= t('.minimum_characters', count: @minimum_password_length) %></em>
         <% end %><br />
@@ -34,11 +34,11 @@
 
       <div class="form-group">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control form-control-sm" %>
       </div>
 
       <div class="form-group text-center">
-        <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
+        <%= f.submit t('.sign_up'), class: 'btn light-button' %>
       </div>
     <% end %>
 

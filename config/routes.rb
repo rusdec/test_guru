@@ -12,6 +12,10 @@ Rails.application.routes.draw do
                registrations: 'users/registrations'
              }
 
+
+  get :contact, to: 'contact#index'
+  post :contact, to: 'contact#send_message'
+
   resources :tests, only: :index do
     post :start, on: :member
   end

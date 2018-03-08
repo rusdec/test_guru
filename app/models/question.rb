@@ -16,16 +16,16 @@ class Question < ApplicationRecord
   validates :test_id, presence: true,
                       numericality: { only_integer: true }
 
-  validate :validation_answers_count_range, on: :update
+  validate :validation_answers_count_max, on: :update
 
-  def validation_answers_count_range
-    unless answers_count_in_range?
-      error = "must include from X to N answer count: #{Setting.answers_range}"
+  def validation_answers_count_max
+    unless answers_count_max?
+      error = "must include max #{Setting.answers_max} answers"
       errors.add(:question, error)
     end
   end
 
-  def answers_count_in_range?
-    Setting.answers_range.include?(answers.count)
+  def answers_count_max?
+    Setting.max_answers >= answers.count
   end
 end

@@ -1,24 +1,32 @@
-<h3>Тест: <%= @test.title %>
-<h3>Сложность: <%= @question.level %></h3>
-<h3>Вопрос:</h3>
-<p><%= @question.body %></p>
-
-<h3>Ответы:</h3>
-<table>
-  <tr>
-    <th>
-      Ответ
-    </th>
-    <th>
-      Верный?
-    </th>
-    <th>
-      Сортировка
-    </th>
-  </tr>
-  <%= render @question.answers %>
-</table>
-
-<%= link_to 'Добавить ответ', new_admin_question_answer_path(@question) %>
-<br>
-<%= link_to "Тест \"#{@question.test.title}\"", admin_test_path(@question.test) %>
+<%= page_header(t('.question')) %>
+<div class="row">
+  <div class="col-md-12 text-center mb-5">
+    <%= tag.h5 @question.body, class: "text-muted" %>
+  </div>
+  <div class="col-md-4 right">
+    <ul class="list-group border-0">
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.test') %>:</b> <%= @test.title %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.level') %>: </b><%= @test.level %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.max_answers') %>: </b><%= Setting.max_answers %>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-12">
+    <table class="table table-hover table-bordered small">
+      <tr class="text-center">
+        <th><%= t('.answer') %></th>
+        <th><%= t('.is_correct') %></th>
+        <th><%= t('.sort') %></th>
+        <th colspan="2"><%= t('.actions') %></th>
+      </tr>
+      <%= render @question.answers %>
+    </table>
+    <%= new_answer_button(@question) %>
+  </div>
+</div>
+<%= link_to t('.back'), admin_test_path(@test), class: "small" %>

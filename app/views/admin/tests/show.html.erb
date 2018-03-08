@@ -1,16 +1,32 @@
-<h3><%= t('.title') %>: <%= @test.title %></h3>
-<h3><%= t('.category') %>: <%= @test.category.title %></h3>
-<h3><%= t('.level') %>: <%= @test.level %></h3>
-<h3><%= t('.authors') %>: <%= test_authors(@test.authors) %>
-<h3><%= t('.questions') %>:</h3>
-<table>
-  <tr>
-    <th><%= t('.question') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.quantity_of_answers') %></th>
-  </tr>
-  <%= render @test.questions %>
-</table>
-<%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
-<br>
+<%= page_header(t('.test')) %>
+<div class="row">
+  <div class="col-md-12 text-center mb-5">
+    <%= tag.h5 @test.title, class: "text-muted" %>
+  </div>
+  <div class="col-md-4 right">
+    <ul class="list-group border-0">
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.category') %>:</b> <%= @test.category.title %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.level') %>:</b> <%= @test.level %>
+      </li>
+      <li class="list-group-item border-0 pt-0 pl-0 small">
+        <b><%= t('.authors') %>:</b> <%= test_authors(@test.authors) %>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-12">
+    <table class="table table-hover table-bordered small edit-inline">
+      <tr class="text-center">
+        <th><%= t('.question') %></th>
+        <th><%= t('.level') %></th>
+        <th><%= t('.quantity_of_answers') %></th>
+        <th colspan="2"><%= t('.actions') %></th>
+      </tr>
+      <%= render @test.questions %>
+    </table>
+    <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: "btn light-button mb-2" %>
+  </div>
+</div>
 <%= render 'link_to_tests' %>

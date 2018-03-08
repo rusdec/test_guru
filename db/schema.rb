@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305090355) do
+ActiveRecord::Schema.define(version: 20180306072000) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,8 +33,8 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
+    t.bigint "user_id"
+    t.bigint "question_id"
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.integer "level", default: 0
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
@@ -52,8 +55,7 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   create_table "role_users", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "role_id", null: false
-    t.index ["role_id"], name: "index_role_users_on_role_id"
-    t.index ["user_id"], name: "index_role_users_on_user_id"
+    t.index ["role_id", "user_id"], name: "index_role_users_on_role_id_and_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -74,8 +76,7 @@ ActiveRecord::Schema.define(version: 20180305090355) do
   create_table "test_authors", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.index ["test_id"], name: "index_test_authors_on_test_id"
-    t.index ["user_id"], name: "index_test_authors_on_user_id"
+    t.index ["test_id", "user_id"], name: "index_test_authors_on_test_id_and_user_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -86,8 +87,7 @@ ActiveRecord::Schema.define(version: 20180305090355) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
-    t.index ["test_id"], name: "index_test_passages_on_test_id"
-    t.index ["user_id"], name: "index_test_passages_on_user_id"
+    t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -121,10 +121,14 @@ ActiveRecord::Schema.define(version: 20180305090355) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "type", default: "User", null: false
+    t.boolean "email_contactable", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["type", "email_contactable"], name: "index_users_on_type_and_email_contactable"
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
 end

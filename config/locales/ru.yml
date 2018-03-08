@@ -9,12 +9,26 @@ ru:
       administration: "Администрирование"
       tests: "Тесты"
       logout: "Выход"
+      contact_us: "Контакты"
       sign_in: "Войти"
       welcome_guru: "Добро пожаловать,"
 
   shared:
     errors:
       errors: "Ошибки"
+
+  contact:
+    index:
+      header: 'Контакты'
+      message: 'Напишите нам'
+      send: 'Отправить'
+      email: 'Эл.почта для связи'
+    send_message:
+      send_success: 'Сообщение успешно отправлено'
+      send_failure: 'К сожалению возникла ошибка при отправке сообщения. Пожалуйста, попробуйте отправить позже.'
+      empty_email: 'Не указан'
+      empty_message: 'Сообщение не может быть пустым'
+      invalid_email: 'Правильно укажите эл.почту или оставьте пустым'
 
   tests:
     index:
@@ -41,6 +55,43 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         gist_url: "Ссылка на gist"
+    questions:
+      show:
+        question: 'Вопрос'
+        answer: 'Ответ'
+        is_correct: 'Правильный?'
+        sort: 'Сортировка'
+        new_answer: 'Добавить ответ'
+        back: 'Назад'
+        max_answers: 'Макс. кол-во ответов'
+        actions: 'Действия'
+        test: 'Тест'
+        level: 'Сложность'
+      form:
+        question: 'Вопрос'
+        level: 'Сложность'
+        back: 'Назад'
+      edit:
+        edit_question: 'Редактирование вопроса теста'
+      new:
+        new_question: 'Новый вопрос'
+    answers:
+      show:
+        answer: 'Ответ'
+        question: 'Вопрос'
+        level: 'Сложность'
+        sort: 'Сортировка'
+        edit: 'Редактировать'
+        back: 'Назад'
+      form:
+        answer: 'Ответ'
+        is_correct: 'Правильный?'
+        sort: 'Сортировка'
+        back: 'Назад'
+      edit:
+        edit_answer: 'Редактировать ответ на вопрос'
+      new:
+        new_answer: 'Новый ответ на вопрос'
     tests:
       index:
         header: "Доступные Тесты"
@@ -51,9 +102,9 @@ ru:
         actions: "Действия"
         new_test: "Новый тест"
       new:
-        header: "Новый тест"
+        new_test: "Новый тест"
       edit:
-        header: "Редактировать тест \"%{test_title}\""
+        edit_test: "Редактировать тест"
       show:
         title: "Название"
         category: "Категория"
@@ -63,6 +114,7 @@ ru:
         question: "Вопрос"
         quantity_of_answers: "Кол-во ответов"
         new_question: "Новый вопрос"
+        test: "Тест"
       link_to_tests:
         all_tests: "Все тесты"
       test:
@@ -72,6 +124,7 @@ ru:
       form:
         select:
           prompt: "Выберите категорию"
+        back: "Назад"
       form_inline:
         submit: "ОК"
     home:

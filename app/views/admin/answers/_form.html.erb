@@ -1,21 +1,27 @@
-<%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
-  <%= render 'shared/errors', resource: @answer %>
+  <div class="col-md-6">
+    <%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
+      <%= render 'shared/errors', resource: @answer %>
 
-  <div class="field">
-    <%= form.label :body, 'Ответ' %>
-    <%= form.text_field :body, id: :answer_body %>
-  </div>
+      <div class="form-group">
+        <%= form.label :body, t('.answer'), class: "small" %>
+        <%= form.text_area :body, id: :answer_body, rows: 3, class: "form-control form-control-sm" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :correct, 'Ответ верный?' %>
-    <%= form.check_box :correct, id: :answer_correct, include_hidden: false %>
-  </div>
+      <div class="form-group">
+        <%= form.check_box :correct, id: :answer_correct, include_hidden: false %>
+        <%= form.label :correct, t('.is_correct'), class: "small" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :sort, t('.sort'), class: "small"%>
+        <%= form.number_field :sort, id: :answer_sort, in: 0..Setting.max_answers, class: "form-control form-control-sm"%>
+      </div>
 
-  <div class="field">
-    <%= form.label :sort, 'Сортировка' %>
-    <%= form.number_field :sort, id: :answer_sort, in: 0..Setting.max_answers %>
+      <div class="form-group text-center mt-5">
+        <%= form.submit class: "btn light-button" %>
+      </div>
+      <div class="form-group text-center">
+        <%= link_to t('.back'), admin_question_path(@answer.question), class: "small" %>
+      </div>
+    <% end %>
   </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -1,0 +1,15 @@
+.light-button {
+  border-color: $cyan4;
+  background-color: white;
+  color: $cyan4;
+  &:hover {
+    color: white;
+    background-color: $cyan4;
+    border-color: $cyan4;
+  }
+  &:active {
+    color: white;
+    background-color: $cyan4;
+    border-color: $cyan4;
+  }
+}

@@ -17,8 +17,7 @@ class Answer < ApplicationRecord
 
   def validate_answers_count_max
     if answers_count_max?
-      error = "must include from #{Setting.min_answers} to #{Setting.max_answers} answers"
-      errors.add(:question, error)
+      errors.add(:question, "must include #{Setting.max_answers} answers")
     end
   end
 

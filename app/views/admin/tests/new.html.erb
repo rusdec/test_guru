@@ -1,4 +1,4 @@
-<%= page_header(t('.header')) %>
-<%= render 'link_to_tests' %>
-<p></p>
-<%= render 'form' %>
+<%= page_header(test_header(@test)) %>
+<div class="row justify-content-center">
+  <%= render 'form' %>
+</div>
