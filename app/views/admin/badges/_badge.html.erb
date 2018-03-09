@@ -1,0 +1,9 @@
+<tr>
+  <td class="text-center"><%= badge.is_active %></td>
+  <td class="text-center"><%= tag.img src: badge.image, style: 'height: 50px' %></td>
+  <td><%= link_to badge.title, admin_badge_path(badge) %></td>
+  <td><%= badge.description %></td>
+  <td><%= badge.rule %></td>
+  <td class="text-center"><%= link_to t('.edit'), edit_admin_badge_path(badge) %></td>
+  <td class="text-center"><%= link_to t('.delete'), admin_badge_path(badge), method: :delete %></td>
+</tr>
