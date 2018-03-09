@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306072000) do
+ActiveRecord::Schema.define(version: 20180309103546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20180306072000) do
     t.integer "sort", default: 0
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["sort"], name: "index_answers_on_sort"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.text "rule", default: ""
+    t.boolean "is_active", default: true
+    t.text "description", null: false
+    t.string "image", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["is_active"], name: "index_badges_on_is_active"
   end
 
   create_table "categories", force: :cascade do |t|
