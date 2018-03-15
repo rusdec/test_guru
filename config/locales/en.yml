@@ -32,6 +32,11 @@
 en:
   question_of_the_test: "Question of the test \"%{test_title}\""
 
+  users:
+    show:
+      header: "Profile"
+      badges: "Achievements"
+
   badges:
     rules:
       by_category_complete_all_tests_of_ruby_category: "Complete all tests of Ruby category"
@@ -52,6 +57,7 @@ en:
       contact_us: "Contact us"
       sign_in: "Sign in"
       welcome: "Welcome guru"
+      profile: "Profile"
 
   shared:
     errors:
@@ -98,6 +104,7 @@ en:
         rule: "Rule"
         actions: "Action"
         header: "Achievements"
+        new_badge: "Add achievement"
       form:
         is_active: "Is active?"
         is_multiple: "Multiple?"
