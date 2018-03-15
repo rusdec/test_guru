@@ -58,12 +58,32 @@ ru:
       question_count: 'Вопросов: %{question_count}'
 
   admin:
+    badges:
+      index:
+        is_active: "Актинен?"
+        image: "Изображение"
+        title: "Название"
+        description: "Описание"
+        rule: "Правило"
+        actions: "Действия"
+        header: "Достижения"
+      form:
+        is_active: "Активен?"
+        is_multiple: "Можно получать больше одного раза?"
+        back: 'Назад'
+      edit:
+        header: "Редактировать достижение"
+      new:
+        header: "Новое достижение"
+      badge:
+        edit: "Редакт."
+        delete: "Удалить"
     gists:
       index:
-        gists: "Gist'ы"
+        gists: "Обращения"
         user: "Пользователь"
         question: "Вопрос"
-        gist_url: "Ссылка на gist"
+        gist_url: "Ссылка на обращение"
     questions:
       show:
         question: 'Вопрос'
@@ -142,7 +162,8 @@ ru:
       categories:
         tests: "Тесты" 
         users: "Пользователи"
-        gists: "Gist'ы"
+        gists: "Обращения"
+        badges: "Достижения"
         edit: "Редактировать"
         show: "Показать"
         tests_count:
@@ -156,10 +177,15 @@ ru:
           many: "Всего %{count} пользователей"
           other: "Всего %{count} пользователей"
         gists_count:
-          one: "Всего %{count} gist"
-          few: "Всего %{count} gist'а"
-          many: "Всего %{count} gist'ов"
-          other: "Всего %{count} gist'ов"
+          one: "Всего %{count} обращение"
+          few: "Всего %{count} обращения"
+          many: "Всего %{count} обращений"
+          other: "Всего %{count} обращений"
+        badges_count:
+          one: "Всего %{count} достижение"
+          few: "Всего %{count} достижения"
+          many: "Всего %{count} достижений"
+          other: "Всего %{count} достиений"
 
   test_passages:
     form:
@@ -205,5 +231,10 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        description: "Описание"
+        rule: "Правило"
     select:
       prompt: "Выберите..."

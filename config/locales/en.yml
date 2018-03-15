@@ -89,6 +89,26 @@ en:
       question_count: 'Questions: %{question_count}'
 
   admin:
+    badges:
+      index:
+        is_active: "Is active?"
+        image: "Image"
+        title: "Title"
+        description: "Description"
+        rule: "Rule"
+        actions: "Action"
+        header: "Achievements"
+      form:
+        is_active: "Is active?"
+        is_multiple: "Multiple?"
+        back: 'Back'
+      edit:
+        header: "Edit achievement"
+      new:
+        header: "New achievement"
+      badge:
+        edit: "Edit"
+        new: "New"
     gists:
       index:
         gists: "Gists"
@@ -175,6 +195,7 @@ en:
         tests: "Tests" 
         users: "Users"
         gists: "Gists"
+        badges: "Badges"
         show: "Show"
         edit: "Edit"
         tests_count:
@@ -186,6 +207,9 @@ en:
         gists_count:
           one: "Created %{count} gist"
           other: "Created %{count} gists"
+        badges_count:
+          one: "Created %{count} badge"
+          other: "Created %{count} badges"
 
   test_passages:
     form:
@@ -231,5 +255,10 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      badge:
+        title: "Title"
+        image: "Image"
+        description: "Description"
+        rule: "Rule"
     select:
       prompt: "Select..."
