@@ -16,10 +16,8 @@ module BadgeGrant
 
       def base_by_count(params)
         if base_by_count_valid?(params) && badge_grant_valid?(params)
-          puts 'COUNT YES'
           grant_badge(grant_badge_params(params))
         else
-          puts 'COUNT NO'
           false
         end
       end
@@ -44,10 +42,8 @@ module BadgeGrant
         end
 
         if badge_grant_valid?(params) && base_by_category_valid?(params)
-          puts 'CATEGORY YES'
           grant_badge(grant_badge_params(params))
         else
-          puts 'CATEGORY NO'
           false
         end
       end

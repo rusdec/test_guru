@@ -5,4 +5,15 @@ class Badge < ApplicationRecord
 
   scope :active, -> { where(is_active: true) }
   scope :by_rule, ->(rule) { find_by(rule: rule) }
+
+  validates :rule, presence: true,
+                   uniqueness: true
+  validates :image, presence: true
+  validates :title, presence: true,
+                    length: { minimum: 6, maximum: 25 }
+  validates :description, presence: true,
+                          length: { minimum: 10, maximum: 50 }
+  validates :is_multiple, inclusion: { in: [true, false] } 
+  validates :is_active, inclusion: { in: [true, false] } 
+
 end

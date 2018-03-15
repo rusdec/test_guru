@@ -109,6 +109,8 @@ en:
       badge:
         edit: "Edit"
         new: "New"
+      update:
+        update_success: "Update successful"
     gists:
       index:
         gists: "Gists"

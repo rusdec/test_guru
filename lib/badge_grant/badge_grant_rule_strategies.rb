@@ -7,7 +7,6 @@ module BadgeGrant
     module ClassMethods
       def rules
         strategies = rule_strategies.concat(rule_manual_strategies)
-        puts strategies
         match_pattern = /^(#{strategies.join('|')})/
         methods.select { |method| method.match(match_pattern) }
       end

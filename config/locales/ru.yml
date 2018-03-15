@@ -78,6 +78,8 @@ ru:
       badge:
         edit: "Редакт."
         delete: "Удалить"
+      update:
+        update_success: "Достижение было успешно обновлено"
     gists:
       index:
         gists: "Обращения"

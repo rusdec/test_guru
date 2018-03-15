@@ -10,10 +10,8 @@ module BadgeGrant
       ##
       def by_manual_first_attempt_success(params)
         if badge_grant_valid?(params) && first_attempt_success_valid?(params)
-          puts 'FIRST YES'
           grant_badge(grant_badge_params(params))
         else
-          puts 'FIRST NO'
           false
         end
       end

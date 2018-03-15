@@ -1,7 +1,7 @@
 class Admin::BadgesController < Admin::BaseController
   before_action :set_badges, only: %i[index]
   before_action :set_badge, only: %i[edit update destroy show]
-  before_action :set_badge_rules, only: %i[edit new]
+  before_action :set_badge_rules, only: %i[edit new update]
 
   add_flash_types :success
 
