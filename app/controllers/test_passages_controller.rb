@@ -14,7 +14,10 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
     
     if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+      TestPassageFinisher.call(test_passage: @test_passage)
+      BadgeGrantService.call(event: :test_passage_complete,
+                             flash: flash,
+                             params: { resource: @test_passage, user: current_user })
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

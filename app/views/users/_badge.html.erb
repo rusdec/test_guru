@@ -1,0 +1,12 @@
+<% @badges.each do |badge| %> 
+  <%= content_tag :div,
+    class: "card border-0 col-md-3 mb-3 mr-1 #{@user_badges.include?(badge) ? '' : 'grayscaled'}" do %>
+    <%= tag.img src: badge.image, class: 'card-img-top user_profile_badge_picture' %>
+    <%= content_tag :div, class: "card-block" do %>
+      <%= content_tag :span, class: "text-center" do %>
+        <%= tag.h6 badge.title, class: "card-title" %>
+      <% end %>
+      <%= content_tag :p, badge.description, class: 'card-text small' %>
+    <% end %>
+  <% end %>
+<% end %>

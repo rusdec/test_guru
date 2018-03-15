@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309103546) do
+ActiveRecord::Schema.define(version: 20180314104653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180309103546) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_multiple", default: false
     t.index ["is_active"], name: "index_badges_on_is_active"
   end
 
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 20180309103546) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
+    t.boolean "is_completed", default: false
     t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
   end
 
@@ -110,6 +112,18 @@ ActiveRecord::Schema.define(version: 20180309103546) do
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["level"], name: "index_tests_on_level"
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "resource_id"
+    t.string "resource_type"
+    t.index ["badge_id", "user_id"], name: "index_user_badges_on_badge_id_and_user_id"
+    t.index ["resource_type", "resource_id"], name: "index_user_badges_on_resource_type_and_resource_id"
+    t.index ["user_id", "badge_id"], name: "index_user_badges_on_user_id_and_badge_id"
   end
 
   create_table "users", force: :cascade do |t|

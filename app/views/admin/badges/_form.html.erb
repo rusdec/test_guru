@@ -2,6 +2,10 @@
   <%= form_with model: [:admin, @badge], local: true do |badge| %>
     <%= render 'shared/errors', resource: @badge %>
     <div class="form-group">
+      <%= badge.check_box :is_active, id: :badge_is_active  %>
+      <%= badge.label :is_active, t('.is_active'), class: "small" %>
+    </div>
+    <div class="form-group">
       <%= badge.label :image, class: "small" %>
       <%= badge.text_field :image, id: :badge_image, class: "form-control form-control-sm" %>
     </div>
@@ -15,7 +19,15 @@
     </div>
     <div class="form-group">
       <%= badge.label :rule, class: "small" %><br>
-      <%= badge.text_area :rule, id: :badge_rule, row: 6, class: "form-control form-control-sm" %>
+      <%= badge.select :rule, nil, {}, class: "form-control form-control-sm" do %>
+        <%= @badge_rules.each do |rule| %>
+          <%= content_tag :option, t("badges.rules.#{rule}"), value: rule, selected: rule.to_s == @badge.rule.to_s %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= badge.check_box :is_multiple, id: :badge_is_multiplet  %>
+      <%= badge.label :is_multiple, t('.is_multiple'), class: "small" %>
     </div>
     <div class="form-group text-center mt-5">
       <%= badge.submit class: "btn light-button" %>

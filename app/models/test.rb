@@ -9,13 +9,15 @@ class Test < ApplicationRecord
 
   belongs_to :category
 
-  scope :by_level, ->(level) { where(level: level) }
+  has_many :user_badges, as: :resource
 
   scope :easy, -> { by_level(0..1) }
   scope :medium, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
 
   scope :by_category, ->(category) { joins(:category).where(categories: { title: category }).order(title: :desc) }
+  scope :by_category_and_ids, ->(category, ids) { by_category(category).where(id: ids) }
+  scope :by_level, ->(level) { where(level: level) }
 
   validates :title, presence: true
   validates :level, presence: true,
