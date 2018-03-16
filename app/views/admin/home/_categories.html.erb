@@ -1,41 +1,23 @@
-<div class="col-md-6 text-xs-center">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title"><%= t('.tests') %></h3>
-      <p class="card-text">
-        <%= link_to t('.edit'), admin_tests_path, class: "btn light-button" %>
-      </p>
-    </div>
-    <div class="card-footer text-muted">
-      <%= t('.tests_count', count: @tests.count) %>
-    </div>
-  </div>
-</div>
+<%= admin_menu_card(card_title: t('.tests'),
+                    link_to: {
+                      title: t('.edit'),
+                      path: admin_tests_path },
+                    card_footer: t('.tests_count', count: @tests.count)) %>
 
-<div class="col-md-6 text-xs-center">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title"><%= t('.users') %></h3>
-      <p class="card-text">
-        <%= link_to t('.edit'), '#', class: "btn light-button" %>
-      </p>
-    </div>
-    <div class="card-footer text-muted">
-      <%= t('.users_count', count: @users.count) %>
-    </div>
-  </div>
-</div>
+<%= admin_menu_card(card_title: t('.users'),
+                    link_to: {
+                      title: t('.edit'),
+                      path: '#' },
+                    card_footer: t('.users_count', count: @users.count)) %>
 
-<div class="col-md-6 text-xs-center">
-  <div class="card">
-    <div class="card-block">
-      <h3 class="card-title"><%= t('.gists') %></h3>
-      <p class="card-text">
-        <%= link_to t('.show'), admin_gists_path, class: "btn light-button" %>
-      </p>
-    </div>
-    <div class="card-footer text-muted">
-      <%= t('.gists_count', count: @gists.count) %>
-    </div>
-  </div>
-</div>
+<%= admin_menu_card(card_title: t('.gists'),
+                    link_to: {
+                      title: t('.show'),
+                      path: admin_gists_path },
+                    card_footer: t('.gists_count', count: @gists.count)) %>
+
+<%= admin_menu_card(card_title: t('.badges'),
+                    link_to: {
+                      title: t('.edit'),
+                      path: admin_badges_path },
+                    card_footer: t('.badges_count', count: @badges.count)) %>

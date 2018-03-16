@@ -2,6 +2,12 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_one :user_badge, as: :resource
+  has_one :badge, through: :user_badge
+
+  scope :completed, -> { where(completed: true) }
+  scope :successful, -> { where(evaluation: true) }
+  scope :failed, -> { completed.where(evaluation: false) }
 
   validates :user_id, numericality: { only_integer: true }
   validates :test_id, numericality: { only_integer: true }
@@ -11,10 +17,6 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
-  end
-
-  def completed?
-    current_question.nil?
   end
 
   def questions_total
@@ -37,6 +39,11 @@ class TestPassage < ApplicationRecord
     questions_ordered_by_id.index(current_question)
   end
 
+  def finish!
+    self.evaluation = true
+    save!
+  end
+
   private
 
   def before_validation_set_next_question
@@ -52,11 +59,18 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
+    return if completed?
     if current_question.nil?
       questions_ordered_by_id.first
     else
-      questions_ordered_by_id.where('id > ?', current_question.id).first
+      question = questions_ordered_by_id.where('id > ?', current_question.id).first
+      test_completed if question.nil?
+      question
     end
+  end
+
+  def test_completed
+    self.completed = true
   end
 
   def questions_ordered_by_id

@@ -32,6 +32,20 @@
 en:
   question_of_the_test: "Question of the test \"%{test_title}\""
 
+  users:
+    show:
+      header: "Profile"
+      badges: "Achievements"
+
+  badges:
+    rules:
+      by_category_complete_all_tests_of_ruby_category: "Complete all tests of Ruby category"
+      by_category_complete_all_tests_of_any_category: "Complete all tests of any category"
+      by_manual_first_attempt_success: "First attempt success"
+      by_count_complete_five_tests: "Complete five different tests"
+      by_count_complete_three_tests: "Complete three different tests"
+    was_granted: "New badge was won \"%{badge_title}\""
+
   layouts:
     admin:
       title: "Admin Panel"
@@ -43,6 +57,7 @@ en:
       contact_us: "Contact us"
       sign_in: "Sign in"
       welcome: "Welcome guru"
+      profile: "Profile"
 
   shared:
     errors:
@@ -80,6 +95,29 @@ en:
       question_count: 'Questions: %{question_count}'
 
   admin:
+    badges:
+      index:
+        is_active: "Is active?"
+        image: "Image"
+        title: "Title"
+        description: "Description"
+        rule: "Rule"
+        actions: "Action"
+        header: "Achievements"
+        new_badge: "Add achievement"
+      form:
+        is_active: "Is active?"
+        is_multiple: "Multiple?"
+        back: 'Back'
+      edit:
+        header: "Edit achievement"
+      new:
+        header: "New achievement"
+      badge:
+        edit: "Edit"
+        new: "New"
+      update:
+        update_success: "Update successful"
     gists:
       index:
         gists: "Gists"
@@ -166,6 +204,7 @@ en:
         tests: "Tests" 
         users: "Users"
         gists: "Gists"
+        badges: "Badges"
         show: "Show"
         edit: "Edit"
         tests_count:
@@ -177,6 +216,9 @@ en:
         gists_count:
           one: "Created %{count} gist"
           other: "Created %{count} gists"
+        badges_count:
+          one: "Created %{count} badge"
+          other: "Created %{count} badges"
 
   test_passages:
     form:
@@ -222,5 +264,10 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      badge:
+        title: "Title"
+        image: "Image"
+        description: "Description"
+        rule: "Rule"
     select:
       prompt: "Select..."

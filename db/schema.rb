@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306072000) do
+ActiveRecord::Schema.define(version: 20180316143427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20180306072000) do
     t.integer "sort", default: 0
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["sort"], name: "index_answers_on_sort"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.text "rule", default: ""
+    t.boolean "active", default: true
+    t.text "description", null: false
+    t.string "image", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "multiple", default: false
+    t.index ["active"], name: "index_badges_on_active"
+    t.index ["rule"], name: "index_badges_on_rule", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -87,6 +100,7 @@ ActiveRecord::Schema.define(version: 20180306072000) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
+    t.boolean "completed", default: false
     t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
   end
 
@@ -99,6 +113,18 @@ ActiveRecord::Schema.define(version: 20180306072000) do
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["level"], name: "index_tests_on_level"
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "resource_id"
+    t.string "resource_type"
+    t.index ["badge_id", "user_id"], name: "index_user_badges_on_badge_id_and_user_id"
+    t.index ["resource_type", "resource_id"], name: "index_user_badges_on_resource_type_and_resource_id"
+    t.index ["user_id", "badge_id"], name: "index_user_badges_on_user_id_and_badge_id"
   end
 
   create_table "users", force: :cascade do |t|

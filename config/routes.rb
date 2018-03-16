@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   root 'main#index'
 
-  devise_for :users,
-             path: :gurus,
-             path_names: {
-               sign_in: :login,
-               sign_out: :logout
-             },
-             controllers: {
-               sessions: 'users/sessions',
-               registrations: 'users/registrations'
-             }
+  devise_for :users, path: :gurus,
+                     path_names:  { sign_in: :login,
+                                    sign_out: :logout },
+                     controllers: { sessions: 'users/sessions',
+                                    registrations: 'users/registrations' }
 
 
   get :contact, to: 'contact#index'
@@ -27,6 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: :show, path: :gurus do
+    resources :badges, only: :index
+  end
+
   get :admin, to: "admin/home#index"
   namespace :admin do
     resources :tests do
@@ -36,6 +35,7 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: %[index]
+    resources :badges, shallow: true
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,39 @@
+<div class="col-md-6">
+  <%= form_with model: [:admin, @badge], local: true do |badge| %>
+    <%= render 'shared/errors', resource: @badge %>
+    <div class="form-group">
+      <%= badge.check_box :active, id: :badge_active  %>
+      <%= badge.label :active, t('.is_active'), class: "small" %>
+    </div>
+    <div class="form-group">
+      <%= badge.label :image, class: "small" %>
+      <%= badge.text_field :image, id: :badge_image, class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= badge.label :title, class: "small" %><br>
+      <%= badge.text_field :title, id: :badge_title, class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= badge.label :description, class: "small" %><br>
+      <%= badge.text_area :description, id: :badge_description, row: 6, class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= badge.label :rule, class: "small" %><br>
+      <%= badge.select :rule, nil, {}, class: "form-control form-control-sm" do %>
+        <%= @badge_rules.each do |rule| %>
+          <%= content_tag :option, t("badges.rules.#{rule}"), value: rule, selected: rule.to_s == @badge.rule.to_s %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= badge.check_box :multiple, id: :badge_multiple  %>
+      <%= badge.label :multiple, t('.is_multiple'), class: "small" %>
+    </div>
+    <div class="form-group text-center mt-5">
+      <%= badge.submit class: "btn light-button" %>
+    </div>
+    <div class="form-group text-center">
+      <%= link_to t('.back'), admin_badges_path, class: "small" %>
+    </div>
+  <% end %>
+</div>

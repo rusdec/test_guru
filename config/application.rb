@@ -17,5 +17,6 @@ module TestGuru
 
     config.time_zome = "Moscow"
     config.i18n.default_locale = :ru
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

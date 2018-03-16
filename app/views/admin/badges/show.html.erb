@@ -1,0 +1,20 @@
+<%= page_header(t('.title')) %>
+<div class="row justify-content-center">
+  <div class="col-md-12 text-center m-2">
+    <%= tag.img src: @badge.image, style: 'height: 150px' %>
+  </div>
+  <div class="col-md-12 text-center text-muted mb-5">
+    <%= tag.h5 @badge.title %>
+  </div>
+  <div class="col-md-6">
+    <%= t('.description') %>:
+    <%= @badge.description %>
+  </div>
+  <div class="col-md-6">
+    <%= t('.rule') %>:
+    <%= @badge.rule %>
+  </div>
+  <div class="col-md-12 text-center mt-5">
+    <%= link_to t('.back'), admin_badges_path, class: 'small' %>
+  </div>
+</div>
