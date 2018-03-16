@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315160237) do
+ActiveRecord::Schema.define(version: 20180316143427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20180315160237) do
 
   create_table "badges", force: :cascade do |t|
     t.text "rule", default: ""
-    t.boolean "is_active", default: true
+    t.boolean "active", default: true
     t.text "description", null: false
     t.string "image", null: false
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_multiple", default: false
-    t.index ["is_active"], name: "index_badges_on_is_active"
+    t.boolean "multiple", default: false
+    t.index ["active"], name: "index_badges_on_active"
     t.index ["rule"], name: "index_badges_on_rule", unique: true
   end
 
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20180315160237) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
-    t.boolean "is_completed", default: false
+    t.boolean "completed", default: false
     t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
   end
 

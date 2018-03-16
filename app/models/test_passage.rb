@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
   has_one :user_badge, as: :resource
   has_one :badge, through: :user_badge
 
-  scope :completed, -> { where(is_completed: true) }
+  scope :completed, -> { where(completed: true) }
   scope :successful, -> { where(evaluation: true) }
   scope :failed, -> { completed.where(evaluation: false) }
 
@@ -17,10 +17,6 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
-  end
-
-  def completed?
-    is_completed?
   end
 
   def questions_total
@@ -43,6 +39,11 @@ class TestPassage < ApplicationRecord
     questions_ordered_by_id.index(current_question)
   end
 
+  def finish!
+    self.evaluation = true
+    save!
+  end
+
   private
 
   def before_validation_set_next_question
@@ -58,7 +59,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    return if is_completed
+    return if completed?
     if current_question.nil?
       questions_ordered_by_id.first
     else
@@ -69,8 +70,9 @@ class TestPassage < ApplicationRecord
   end
 
   def test_completed
-    self.is_completed = true
+    self.completed = true
   end
+
   def questions_ordered_by_id
     test.questions.order(:id)
   end

@@ -2,8 +2,8 @@
   <%= form_with model: [:admin, @badge], local: true do |badge| %>
     <%= render 'shared/errors', resource: @badge %>
     <div class="form-group">
-      <%= badge.check_box :is_active, id: :badge_is_active  %>
-      <%= badge.label :is_active, t('.is_active'), class: "small" %>
+      <%= badge.check_box :active, id: :badge_active  %>
+      <%= badge.label :active, t('.is_active'), class: "small" %>
     </div>
     <div class="form-group">
       <%= badge.label :image, class: "small" %>
@@ -26,8 +26,8 @@
       <% end %>
     </div>
     <div class="form-group">
-      <%= badge.check_box :is_multiple, id: :badge_is_multiplet  %>
-      <%= badge.label :is_multiple, t('.is_multiple'), class: "small" %>
+      <%= badge.check_box :multiple, id: :badge_multiple  %>
+      <%= badge.label :multiple, t('.is_multiple'), class: "small" %>
     </div>
     <div class="form-group text-center mt-5">
       <%= badge.submit class: "btn light-button" %>

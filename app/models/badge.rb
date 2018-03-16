@@ -3,7 +3,7 @@ class Badge < ApplicationRecord
   has_many :users, through: :user_badges
   has_many :resources, through: :user_badges
 
-  scope :active, -> { where(is_active: true) }
+  scope :active, -> { where(active: true) }
   scope :by_rule, ->(rule) { find_by(rule: rule) }
 
   validates :rule, presence: true,
@@ -13,7 +13,7 @@ class Badge < ApplicationRecord
                     length: { minimum: 6, maximum: 25 }
   validates :description, presence: true,
                           length: { minimum: 10, maximum: 50 }
-  validates :is_multiple, inclusion: { in: [true, false] } 
-  validates :is_active, inclusion: { in: [true, false] } 
+  validates :multiple, inclusion: { in: [true, false] } 
+  validates :active, inclusion: { in: [true, false] } 
 
 end
