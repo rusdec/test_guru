@@ -4,6 +4,7 @@
     <%= link_to test.title, admin_test_path(test), class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
+  <td class="text-center"><%= timer_icon(test) %></td>
   <td class="text-center" sort-by="level"><%= test.level %></td>
   <td sort-by="questions-count" style="text-align: center"><%= test.questions.count %></td>
   <td class="text-center">

@@ -5,6 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @user_badges = current_user.badges.uniq
-    @badges = Badge.all
+    @badges = Badge.active
   end
 end

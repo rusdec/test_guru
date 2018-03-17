@@ -1,4 +1,10 @@
 <%= page_header("#{t('.header')} \"#{@test_passage.test.title}\"") %>
+<% if @test_passage.test.with_timer? %>
+  <div class="col-md-12 text-center mb-5 text-muted">
+    <%= timer_icon(@test_passage.test) %>
+    <%= tag.h5 '...', id: 'timer', data: { remaining_seconds: @test_passage.remaining_seconds, update_path: test_passage_path(@test_passage) }, class: "d-inline"%>
+  </div>
+<% end %>
 
 <p><b><%= @test_passage.current_question.body %></b></p>
 <%= render 'form' %>

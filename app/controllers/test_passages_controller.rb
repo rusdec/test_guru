@@ -9,20 +9,26 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    redirect_to test_passage_path(@test_passage) unless @test_passage.must_finished?
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    if @test_passage.time_left?
+      flash_message = { alert: t('.time_left') }
+    else
+      @test_passage.accept!(params[:answer_ids])
+      flash_message = {}
+    end
 
-    if @test_passage.completed?
+    if @test_passage.must_finished?
       @test_passage.finish!
       BadgeGrantService.call(event: :test_passage_complete,
                              flash: flash,
                              params: { resource: @test_passage,
-                                       user: current_user })
-      TestsMailer.completed_test(@test_passage).deliver_now
+                                       user: current_user }) unless @test_passage.time_left?
+      #TestsMailer.completed_test(@test_passage).deliver_now
 
-      redirect_to result_test_passage_path(@test_passage)
+      redirect_to result_test_passage_path(@test_passage), flash_message
     else
       render :show
     end
@@ -43,5 +49,4 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
 end
