@@ -41,7 +41,6 @@ class TestPassage < ApplicationRecord
 
   def finish!
     self.passed = result_percent >= passing_percent
-    self.completed = true
     save!
   end
 

@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
+  before_action :set_time_left, only: :update
 
   add_flash_types :success
 
@@ -13,7 +14,8 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if @test_passage.time_left?
+    puts "MUST FIN: #{@test_passage_must_finished}"
+    if @time_left
       flash_message = { alert: t('.time_left') }
     else
       @test_passage.accept!(params[:answer_ids])
@@ -25,7 +27,7 @@ class TestPassagesController < ApplicationController
       BadgeGrantService.call(event: :test_passage_complete,
                              flash: flash,
                              params: { resource: @test_passage,
-                                       user: current_user }) unless @test_passage.time_left?
+                                       user: current_user }) unless @time_left
       #TestsMailer.completed_test(@test_passage).deliver_now
 
       redirect_to result_test_passage_path(@test_passage), flash_message
@@ -48,5 +50,9 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def set_time_left
+    @time_left = @test_passage.time_left?
   end
 end
