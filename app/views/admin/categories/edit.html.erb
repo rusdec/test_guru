@@ -1,10 +1,10 @@
 <%= page_header(t('.header')) %>
 <div class="row justify-content-center">
   <div class="col-md-12 text-center m-2">
-    <%= tag.img src: @badge.image, style: 'height: 150px', id: 'image-editable', class: 'rounded-circle' %>
+    <%= tag.img src: @category.image, style: 'height: 150px', id: 'image-editable', class: 'bg-gray rounded-circle' %>
   </div>
   <div class="col-md-12 text-center mb-5 text-muted">
-    <%= tag.h5 @badge.title %>
+    <%= tag.h5 @category.title %>
   </div>
   <%= render 'form' %>
 </div>

@@ -101,6 +101,29 @@ en:
       question_count: 'Questions: %{question_count}'
 
   admin:
+    categories:
+      edit:
+        header: "Edit category"
+      form:
+        back: "Back"
+      index:
+        header: "Categories"
+        title: "Title"
+        actions: "Actions"
+        new_category: "Add category"
+      category:
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        header: "Category"
+        back: "Back"
+      update:
+        update_successful: "Category \"%{title}\" update successful"
+      create:
+        create_successful: "Category \"%{title}\" create successful"
+      destroy:
+        delete_successful: "Category \"%{title}\" delete successful"
+        delete_failed: "Error while category \"%{title}\" delete"
     badges:
       index:
         is_active: "Is active?"
@@ -212,6 +235,7 @@ en:
       index:
         header: "Administration"
       categories:
+        categories: "Categories"
         tests: "Tests" 
         users: "Users"
         gists: "Gists"
@@ -230,6 +254,9 @@ en:
         badges_count:
           one: "Created %{count} badge"
           other: "Created %{count} badges"
+        categories_count:
+          one: "Created %{count} category"
+          other: "Created %{count} categories"
 
   test_passages:
     form:
@@ -286,5 +313,8 @@ en:
         image: "Image"
         description: "Description"
         rule: "Rule"
+      category:
+        title: "Title"
+        image: "Background"
     select:
       prompt: "Select..."

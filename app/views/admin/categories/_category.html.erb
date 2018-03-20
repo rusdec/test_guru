@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to category.title, admin_category_path(category) %></td>
+  <td class="text-center"><%= link_to t('.edit'), edit_admin_category_path(category) %></td>
+  <td class="text-center"><%= link_to t('.delete'), admin_category_path(category), method: :delete %></td>
+</tr>
