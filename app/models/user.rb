@@ -32,13 +32,12 @@ class User < ApplicationRecord
     test_passages.completed.where(test_id: test_id).count == 1
   end
 
-  def have_not_badge?(params)
-    user_badges.where(badge_id: params[:badge_id]).first.nil?
-   # user_badges.where(badge_id: params[:badge_id]).where(resource_id: params[:resource_id]).first.nil?
+  def have_not_badge?(badge_id)
+    user_badges.find_by(badge_id: badge_id).nil?
   end
 
-  def have_badge?(params)
-    !have_not_badge?(params)
+  def have_badge?(badge_id)
+    !have_not_badge?(badge_id)
   end
 
   def uniq_completed_tests_ids
