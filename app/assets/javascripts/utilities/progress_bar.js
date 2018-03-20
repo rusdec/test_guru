@@ -11,7 +11,7 @@ document.addEventListener('turbolinks:load', function() {
       },
       params: {
         background: { width: '100%', fill: '#f0f0f0' },
-        bar: { fill: '#ff0066', height: '12px' },
+        bar: { fill: '#e64980', height: '12px' },
         description: { fill: '#fff', 'font-size': "10px", x: '3px' }
       }
     }).render()

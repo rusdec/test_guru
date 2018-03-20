@@ -36,6 +36,12 @@ en:
     show:
       header: "Profile"
       badges: "Achievements"
+      completed_test_passages: "Tests history"
+    test_passages:
+      passed: "Pass"
+      test_title: "Test title"
+      category_title: "Category"
+      completed_at: "Completed at"
 
   badges:
     rules:
@@ -119,6 +125,10 @@ en:
         new: "New"
       update:
         update_success: "Update successful"
+      destroy:
+        destroy_success: "Delete successful"
+      create:
+        update_success: "Create successful"
     gists:
       index:
         gists: "Gists"

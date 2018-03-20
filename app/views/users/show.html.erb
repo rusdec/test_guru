@@ -7,8 +7,13 @@
     </div>
   </div>
   <div class="col-md-9">
-    <%= tag.h3 @user.full_name %>
-    <%= tag.h5 @user.email, class: "text-muted" %>
+    <%= tag.h3 current_user.full_name %>
+    <%= tag.h5 current_user.email, class: "text-muted" %>
+  </div>
+
+  <div class="col-md-12 mt-5"><%= tag.h3 t('.completed_test_passages') %></div>
+  <div class="col-md-12 mt-5">
+    <%= render 'users/test_passages' %>
   </div>
 
   <div class="col-md-12 mt-5"><%= tag.h3 t('.badges') %></div>
