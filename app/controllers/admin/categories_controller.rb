@@ -15,7 +15,10 @@ class Admin::CategoriesController < ApplicationController
   def edit; end
 
   def update
+    puts category_params.inspect
+    puts @category.inspect
     if @category.update(category_params)
+      puts @category.inspect
       redirect_to edit_admin_category_path(@category), { success: t('.update_successful', title: @category.title) }
     else
       render :edit
