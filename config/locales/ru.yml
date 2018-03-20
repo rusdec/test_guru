@@ -71,6 +71,29 @@ ru:
       question_count: 'Вопросов: %{question_count}'
 
   admin:
+    categories:
+      edit:
+        header: "Редактировать категорию"
+      form:
+        back: "Назад"
+      index:
+        header: "Категории"
+        title: "Название"
+        actions: "Действия"
+        new_category: "Добавить категорию"
+      category:
+        edit: "Редакт."
+        delete: "Удалить"
+      show:
+        header: "Категория"
+        back: "Назад"
+      update:
+        update_successful: "Категория \"%{title}\" успешно обновлена"
+      create:
+        create_successful: "Категория \"%{title}\" успешно создана"
+      destroy:
+        delete_successful: "Категория \"%{title}\" успешно удалена"
+        delete_failed: "Ошибка при удалении категории \"%{title}\""
     badges:
       index:
         is_active: "Активен?"
@@ -93,9 +116,9 @@ ru:
         edit: "Редакт."
         delete: "Удалить"
       update:
-        update_success: "Достижение было успешно обновлено"
+        update_success: "Достижение успешно обновлено"
       destroy:
-        destroy_success: "Достижение было успешно удалено"
+        destroy_success: "Достижение успешно удалено"
       create:
         update_success: "Достижение было успешно создано"
     gists:
@@ -181,6 +204,7 @@ ru:
       index:
         header: "Администрирование"
       categories:
+        categories: "Категории"
         tests: "Тесты" 
         users: "Пользователи"
         gists: "Обращения"
@@ -207,6 +231,11 @@ ru:
           few: "Всего %{count} достижения"
           many: "Всего %{count} достижений"
           other: "Всего %{count} достиений"
+        categories_count:
+          one: "Всего %{count} категория"
+          few: "Всего %{count} категории"
+          many: "Всего %{count} категорий"
+          other: "Всего %{count} категорий"
 
   test_passages:
     form:
@@ -263,5 +292,8 @@ ru:
         image: "Изображение"
         description: "Описание"
         rule: "Правило"
+      category:
+        title: "Название"
+        image: "Изображение"
     select:
       prompt: "Выберите..."

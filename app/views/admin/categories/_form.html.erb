@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <%= form_with model: [:admin, @category], local: true do |category| %>
+    <%= render 'shared/errors', resource: @category %>
+    <div class="form-group">
+      <%= category.label :title, class: "small" %><br>
+      <%= category.text_field :title, id: :category_title, class: "form-control form-control-sm text-center" %>
+    </div>
+    <div class="form-group">
+      <%= category.label :image, class: "small" %><br>
+      <%= category.text_field :image, id: :category_image, class: "form-control form-control-sm image-input" %>
+    </div>
+    <div class="form-group text-center mt-5">
+      <%= category.submit class: "btn light-button" %>
+    </div>
+    <div class="form-group text-center">
+      <%= link_to t('.back'), admin_categories_path, class: "small" %>
+    </div>
+  <% end %>
+</div>

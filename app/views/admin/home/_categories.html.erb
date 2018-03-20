@@ -1,3 +1,9 @@
+<%= admin_menu_card(card_title: t('.categories'),
+                    link_to: {
+                      title: t('.edit'),
+                      path: admin_categories_path },
+                    card_footer: t('.categories_count', count: @categories.count)) %>
+
 <%= admin_menu_card(card_title: t('.tests'),
                     link_to: {
                       title: t('.edit'),
