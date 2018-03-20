@@ -35,13 +35,16 @@ class TestPassage < ApplicationRecord
     questions_ordered_by_id.index(current_question)
   end
 
-  def must_finished?
-    completed? || time_left?
+  def finish!
+    self.completed = true unless completed?
+    self.current_question = nil unless current_question.nil?
+    self.passed = result_percent >= passing_percent
+    yield if block_given?
+    save!
   end
 
-  def finish!
-    self.passed = result_percent >= passing_percent
-    save!
+  def finish_by_timeout!
+    finish! { self.passed = false }
   end
 
   def remaining_seconds

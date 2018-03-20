@@ -4,6 +4,7 @@ document.addEventListener('turbolinks:load', () => {
   if (timer) {
     var remainingSeconds = Number.parseFloat(timer.dataset.remainingSeconds)
     var countdown = () => { return (remainingSeconds > 0) ? remainingSeconds -= 1 : 0 }
+    var timerIcon = document.querySelector('i.fa-clock')
     setInterval(remainingTime, every_seconds(1))
   }
 
@@ -15,8 +16,18 @@ document.addEventListener('turbolinks:load', () => {
     let sec = countdown()
     if (sec > 0) {
       printRemainingTime(sec)
+      setTimerDeadlineColor(sec, 60)
     } else {
       finishTest()
+    }
+  }
+
+  function setTimerDeadlineColor(sec, deadlineSec) {
+    let deadlineClass = 'deadline-timer'
+    if (!timer.classList.contains(deadlineClass) && sec <= deadlineSec) {
+      [timerIcon, timer].forEach((element) => {
+        element.classList.add(deadlineClass)
+      })
     }
   }
 
