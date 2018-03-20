@@ -1,7 +1,7 @@
 module TestPassagesHelper
   def test_passage_result(test_passage)
     tag.span "#{result_status(test_passage)}",
-             style: ["color: #{result_color(test_passage)}"]
+             class: ["#{result_color(test_passage)}"]
   end
 
   def current_question_number(test_passage)
@@ -13,6 +13,20 @@ module TestPassagesHelper
   end
 
   def result_color(test_passage)
-    test_passage.passed? ? 'green' : 'red'
+    test_passage.passed? ? 'passed-true' : 'passed-false'
+  end
+
+  def passed_icon(test_passage)
+    if test_passage.passed?
+      tag.i class: 'far fa-check-circle passed-true'
+    else
+      tag.i class: 'far fa-times-circle passed-false'
+    end
+  end
+
+  def test_completed_date(test_passage)
+    date = test_passage.updated_at.getlocal
+    time = tag.span date.strftime('(%H:%M)'), class: "text-muted"
+    tag.span  "#{date.strftime('%d.%m.%Y')} #{time}".html_safe
   end
 end

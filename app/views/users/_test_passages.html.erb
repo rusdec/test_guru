@@ -1,0 +1,18 @@
+<table class="table table-striped small">
+  <thead class="text-center">
+    <th><%= t('.passed') %></th>
+    <th><%= t('.test_title') %></th>
+    <th><%= t('.category_title') %></th>
+    <th><%= t('.completed_at') %></th>
+  </thead>
+  <tbody>
+  <% @test_passages.each do |test_passage| %>
+    <tr class="text-center">
+      <td><%= passed_icon(test_passage) %></td>
+      <td class="text-left"><%= test_passage.test.title %></td>
+      <td class="text-muted"><%= test_passage.test.category.title %></td>
+      <td><%= test_completed_date(test_passage) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

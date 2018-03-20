@@ -5,6 +5,13 @@ ru:
     show:
       header: "Профиль"
       badges: "Достижения"
+      completed_test_passages: "История тестирования"
+    test_passages:
+      passed: "Результат"
+      test_title: "Название теста"
+      category_title: "Категория"
+      completed_at: "Завершён"
+
 
   badges:
     rules:
@@ -87,6 +94,10 @@ ru:
         delete: "Удалить"
       update:
         update_success: "Достижение было успешно обновлено"
+      destroy:
+        destroy_success: "Достижение было успешно удалено"
+      create:
+        update_success: "Достижение было успешно создано"
     gists:
       index:
         gists: "Обращения"
