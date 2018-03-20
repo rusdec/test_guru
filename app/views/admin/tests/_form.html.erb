@@ -13,6 +13,14 @@
       <%= test.label :category_id, class: "small" %><br>
       <%= test.collection_select :category_id, Category.all, :id, :title, { prompt: true }, { class: "form-control form-control-sm" } %>
     </div>
+    <div class="form-group">
+      <%= test.check_box :with_timer, id: :test_with_timer %>
+      <%= test.label :with_timer, class: "small" %>
+    </div>
+    <div class="form-group test_timer">
+      <%= test.label :timer, class: "small" %>
+      <%= test.number_field :timer, in: 1..120, class: "form-control form-control-sm" %>
+    </div>
     <div class="form-group text-center mt-5">
       <%= test.submit class: "btn light-button" %>
     </div>

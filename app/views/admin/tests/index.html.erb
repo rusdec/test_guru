@@ -19,6 +19,9 @@
                        hidden: :desc) %>
     </th>
     <th>
+      <span class="small font-weight-bold"><%= t('.with_timer') %></span>
+    </th>
+    <th>
       <%= sort_buttons(title: tag.b(t('.level')),
                        sort_by: 'level',
                        sort_element_type: 'numeric',

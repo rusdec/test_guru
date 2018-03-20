@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
+  before_action :check_timer, only: :update
 
   add_flash_types :success
 
@@ -9,6 +10,9 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    unless @test_passage.completed? || @test_passage.time_left?
+      redirect_to test_passage_path(@test_passage)
+    end
   end
 
   def update
@@ -20,7 +24,7 @@ class TestPassagesController < ApplicationController
                              flash: flash,
                              params: { resource: @test_passage,
                                        user: current_user })
-      TestsMailer.completed_test(@test_passage).deliver_now
+      #TestsMailer.completed_test(@test_passage).deliver_now
 
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -44,4 +48,10 @@ class TestPassagesController < ApplicationController
     @test_passage = TestPassage.find(params[:id])
   end
 
+  def check_timer
+    if @test_passage.time_left?
+      @test_passage.finish_by_timeout!
+      redirect_to result_test_passage_path(@test_passage), { alert: t('.time_left') }
+    end
+  end
 end

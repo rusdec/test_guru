@@ -105,6 +105,7 @@ en:
         actions: "Action"
         header: "Achievements"
         new_badge: "Add achievement"
+        with_timer: "Timer?"
       form:
         is_active: "Is active?"
         is_multiple: "Multiple?"
@@ -228,12 +229,16 @@ en:
       right_answers: "Right answers"
       result: "Result"
       all_tests: "All tests"
+      test_failed: "Test failed"
+      test_passed: "Test passed"
     show:
       header: "Passing test"
       dificult_answer: "I have problems with the question"
     gist:
       success: "Question was <a target=\"_blank\" href=\"%{url}\">send</a>"
       failure: "Error while question send"
+    update:
+      time_left: "Testing time left"
 
   main:
     index:
@@ -264,6 +269,8 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        with_timer: "Timer?"
+        timer: "Duration (min)"
       badge:
         title: "Title"
         image: "Image"

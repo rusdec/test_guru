@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316143427) do
+ActiveRecord::Schema.define(version: 20180317165118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20180316143427) do
   create_table "test_passages", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.boolean "evaluation", default: false
+    t.boolean "passed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(version: 20180316143427) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "with_timer", default: false
+    t.integer "timer", default: 5
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["level"], name: "index_tests_on_level"

@@ -1,5 +1,6 @@
-<h1><%= t('.header', test_title: @test_passage.test.title) %></h1>
-<table>
+<%= page_header(t('.header', test_title: @test_passage.test.title)) %>
+<div class="col-md-12">
+<table class="table">
   <tr>
     <th style="text-align: left"><%= t('.right_answers') %></th>
     <td><%= @test_passage.result_percent %>%</td>
@@ -9,5 +10,5 @@
     <td><%= test_passage_result(@test_passage) %></td>
   </tr>
 </table>
-
+</div>
 <%= link_to t('.all_tests'), tests_path %>

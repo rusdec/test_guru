@@ -4,9 +4,13 @@
 
     <div class="card-block">
       <p class="card-title" sort-by="title">
-        <%= test.title %><br>
+        <%= timer_icon(test) %>
+        <%= test.title %>
+        <br>
         <span class="text-muted"><small><%= test.category.title %></small></span>
       </p>
+      <div class="text-center">
+      </div>
       <p class="card-text">
         <%= button_to t('.start_test'), start_test_path(test), class: "btn light-button" %>
       </p>

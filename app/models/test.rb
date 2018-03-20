@@ -18,6 +18,8 @@ class Test < ApplicationRecord
   scope :by_category, ->(category) { joins(:category).where(categories: { title: category }).order(title: :desc) }
   scope :by_category_and_ids, ->(category, ids) { by_category(category).where(id: ids) }
   scope :by_level, ->(level) { where(level: level) }
+  scope :with_timer, -> { where(with_timer: true) }
+  scope :without_timer, -> { where(with_timer: false) }
 
   validates :title, presence: true
   validates :level, presence: true,
@@ -27,6 +29,12 @@ class Test < ApplicationRecord
                           numericality: { only_integer: true }
 
   validates :title, uniqueness: { scope: :level }
+
+  validates :with_timer, inclusion: { in: [true, false] }
+  validates :timer, numericality: { only_integer: true,
+                                    greater_than_or_equal_to: 1,
+                                    less_than_or_equal_to: 120 }
+
 
   class << self
     def all_by_category(category)

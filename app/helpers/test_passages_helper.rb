@@ -1,12 +1,7 @@
 module TestPassagesHelper
   def test_passage_result(test_passage)
-    tag.span "тест #{result_status(test_passage)}",
+    tag.span "#{result_status(test_passage)}",
              style: ["color: #{result_color(test_passage)}"]
-  end
-
-  def test_passage_progress(test_passage)
-    tag.p "Вопрос #{tag.b current_question_number(test_passage)}
-           из #{tag.b test_passage.questions_total}".html_safe
   end
 
   def current_question_number(test_passage)
@@ -14,18 +9,10 @@ module TestPassagesHelper
   end
 
   def result_status(test_passage)
-    if test_passage.success?
-      'пройден'
-    else
-      'не пройден'
-    end
+    test_passage.passed? ? t('.test_passed') : t('.test_failed')
   end
 
   def result_color(test_passage)
-    if test_passage.success?
-      'green'
-    else
-      'red'
-    end
+    test_passage.passed? ? 'green' : 'red'
   end
 end

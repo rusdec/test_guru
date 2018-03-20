@@ -139,6 +139,7 @@ ru:
         quantity_of_questions: "Кол-во вопросов"
         actions: "Действия"
         new_test: "Новый тест"
+        with_timer: "Таймер?"
       new:
         new_test: "Новый тест"
       edit:
@@ -204,12 +205,16 @@ ru:
       right_answers: "Правильных ответов"
       result: "Результат"
       all_tests: "Все тесты"
+      test_failed: "Тест провален"
+      test_passed: "Тест пройден"
     show:
       header: "Прохождение теста"
       dificult_answer: "У меня сложности с этим вопросом"
     gist:
       success: "Вопрос успешно <a target=\"_blank\" href=\"%{url}\">отправлен</a>"
       failure: "Ошибка при отправке вопроса"
+    update:
+      time_left: "Время, отведённое на тест, вышло"
 
   main:
     index:
@@ -240,6 +245,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        with_timer: "Таймер?"
+        timer: "Время (мин.)"
       badge:
         title: "Название"
         image: "Изображение"
