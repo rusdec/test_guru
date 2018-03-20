@@ -4,4 +4,19 @@ div.light-card {
   div.card-footer {
     background-color: white;
   }
+  div.card-header {
+    overflow:hidden;
+    height: 100px;
+    background-color: $cyan2;
+    img {
+      max-height: 500px;
+    }
+  }
+  &:hover {
+    box-shadow: 0px 0px 13px 3px lightgray;
+    div.card-header {
+      background-color: $cyan4;
+    }
+  }
 }
+
