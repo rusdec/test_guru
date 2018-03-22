@@ -69,7 +69,7 @@ module BadgeGrant
 
       def badge_grant_valid?(params)
         return true if params[:badge].multiple
-        return true unless params[:user].have_badge?(badge_id: params[:badge].id)
+        return true unless params[:user].have_badge?(params[:badge].id)
 
         false
       end
