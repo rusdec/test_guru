@@ -29,4 +29,18 @@ module TestPassagesHelper
     time = tag.span date.strftime('(%H:%M)'), class: "text-muted"
     tag.span  "#{date.strftime('%d.%m.%Y')} #{time}".html_safe
   end
+
+  def elapsed_time(test_passage)
+    sec_num = test_passage.updated_at - test_passage.created_at
+    hours = (sec_num/3600).round
+    minutes = ((sec_num - (hours*3600))/60).round
+    seconds = (sec_num - (hours*3600) - (minutes*60)).round
+
+    hours = "0#{hours}" if hours < 10
+    minutes = "0#{minutes}" if minutes < 10
+    seconds = "0#{seconds}" if seconds < 10
+
+    "#{hours}:#{minutes}:#{seconds}"
+
+  end
 end
