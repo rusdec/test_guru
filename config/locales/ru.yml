@@ -11,6 +11,7 @@ ru:
       test_title: "Название теста"
       category_title: "Категория"
       completed_at: "Завершён"
+      elapsed_time: "Затраченное время"
 
 
   badges:

@@ -42,6 +42,7 @@ en:
       test_title: "Test title"
       category_title: "Category"
       completed_at: "Completed at"
+      elapsed_time: "Elapsed time"
 
   badges:
     rules:
